@@ -1,0 +1,324 @@
+\documentclass[aspectratio=1610,compress,t,english,french]{beamer}
+\mode<presentation>
+
+% -------- %
+% Packages %
+% -------- %
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[abs]{overpic}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage[overload]{textcase}
+\usepackage{nameref}
+
+\graphicspath{{img/}}
+
+\setlength\unitlength{1mm}	% Setting pour overpic
+
+\newif\ifdebutSection
+
+
+
+% ------------ %
+% Template HEC %
+% ------------ %
+
+% Couleurs primaires
+\definecolor{bleuFoncePrimaire}{RGB}{0,60,113}
+\definecolor{cyanPrimaire}{RGB}{0,159,223}
+\definecolor{noirPrimaire}{RGB}{44,42,41}
+\definecolor{grisPrimaire}{RGB}{151,153,155}
+
+% Couleurs secondaires
+\definecolor{bleuFonceSecondaire}{RGB}{0,94,184}
+\definecolor{bleuPaleSecondaire}{RGB}{65,182,230}
+\definecolor{lilasSecondaire}{RGB}{125,85,199}
+\definecolor{aquaSecondaire}{RGB}{0,193,213}
+\definecolor{turquoiseSecondaire}{RGB}{0,191,179}
+
+% Couleurs tertiaires
+\definecolor{rougeTertiaire}{RGB}{228,0,43}
+\definecolor{orangeTertiaire}{RGB}{255,130,0}
+\definecolor{jauneTertiaire}{RGB}{255,209,0}
+\definecolor{vertTertiaire}{RGB}{72,162,63}
+\definecolor{mauveTertiaire}{RGB}{173,26,172}
+\definecolor{roseTertiaire}{RGB}{212,15,125}
+
+% Couleurs Beamer
+\setbeamercolor{entete}{bg=cyanPrimaire,fg=white}
+\setbeamercolor{sidebar}{bg=white,fg=white}
+\setbeamercolor{navigation symbols}{bg=grisPrimaire,fg=grisPrimaire}
+\setbeamercolor{frametitle}{bg=cyanPrimaire,fg=white}
+\setbeamercolor{itemize item}{fg=bleuFoncePrimaire}
+\setbeamercolor{pagetitre}{bg=cyanPrimaire,fg=bleuFoncePrimaire}
+\setbeamercolor{footline}{bg=white,fg=bleuFoncePrimaire}
+\setbeamercolor{section in toc}{fg=bleuFoncePrimaire}
+\setbeamercolor{sectionframelower}{bg=grisPrimaire}
+\setbeamercolor{block title}{fg=black}
+
+% Fonts Beamer
+\setbeamerfont*{block title}{series=\bfseries,family=\rmfamily,shape=\scshape,size=\large}
+
+% Tailles Beamer
+\setbeamersize{sidebar width left=8.3125mm,sidebar width right=8.3125mm,text margin left=0mm,text margin right=0mm}
+
+% Templates Beamer
+\setbeamertemplate{headline}{\vspace{8.3125mm}}
+\setbeamertemplate{footline}{%
+	\hspace{8.3125mm}
+	\begin{minipage}[t][8.125mm][t]{21.875mm}
+		\rule{\linewidth}{0pt}
+		\includegraphics[width=21.875mm]{110-ans.eps}
+	\end{minipage}
+	\begin{minipage}[t][8.125mm][t]{121.5mm}
+		\raggedleft
+		\rule{\linewidth}{0pt}
+		\makebox[95.25mm]{}\includegraphics[width=26.25mm]{Logo_HEC_Montreal.eps}\\[2.8mm]
+		\hfill
+		\insertshortdate
+		\hspace{2.5mm}
+		\HECpiedDePage
+		\hfill
+		\ifdebutSection
+			\color{white}\insertframenumber
+		\else	
+			\insertframenumber
+		\fi
+	\end{minipage}
+	
+	\vspace{4.375mm}
+}
+\setbeamertemplate{title page}{%
+	\vspace{-3.125mm}
+	\hspace{-1.5mm}\includegraphics[height=12.5mm]{Logo_HEC_Montreal.eps}
+	\hfill
+	\includegraphics[height=12.5mm]{110-ans.eps}
+	\\[6.25mm]
+	\begin{overpic}[width=\textwidth]
+		{background-a.eps}
+		\put(0,42){%
+			\begin{beamercolorbox}[wd=0.65\textwidth,ht=27.25mm,sep=1.5ex]{pagetitre}
+				\huge\textbf{\inserttitle}
+			\end{beamercolorbox}
+		}
+		\put(0,35){%
+			\begin{beamercolorbox}[wd=0.65\textwidth,sep=1ex]{pagetitre}
+				\insertsubtitle
+			\end{beamercolorbox}
+		}
+		\put(0,0){%
+			\begin{beamercolorbox}[wd=0.25\textwidth,sep=0.5ex]{pagetitre}
+				\tiny\HECpiedDePage
+			\end{beamercolorbox}
+		}
+	\end{overpic}
+}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{section in toc}{%
+	\colorbox{grisPrimaire}{\makebox[.985\textwidth]{\color{white} \inserttocsection\hfill}}
+}
+\setbeamertemplate{subsection in toc}{%
+	\makebox[.05\textwidth]{}%
+	\colorbox{grisPrimaire!20}{\makebox[.935\textwidth]{\inserttocsubsection\hfill}}
+}
+\AtBeginSection[]{%
+	\debutSectiontrue
+	\begin{frame}
+		\begin{overpic}[width=\textwidth]
+			{section-background-a.eps}
+			\put(0,42){%
+				\begin{beamercolorbox}[wd=96mm,ht=27.25mm,sep=1ex]{pagetitre}
+					\huge\textbf{\nomsectioncourante}
+				\end{beamercolorbox}
+			}
+			\put(0,35){%
+				\begin{beamercolorbox}[wd=96mm,ht=6mm,sep=1ex]{pagetitre}
+				\end{beamercolorbox}
+			}
+			\put(36,0){%
+				\begin{beamercolorbox}[wd=107.5mm,ht=34mm,sep=1ex]{sectionframelower}
+				\end{beamercolorbox}
+			}
+		\end{overpic}
+	\end{frame}
+	\debutSectionfalse
+	\addtocounter{framenumber}{-1}
+}
+
+% \logo{\includegraphics[height=0.5cm]{Logo_HEC_Montreal_PMS_Coated.eps}}
+% \titlegraphic{\includegraphics[height=0.5cm]{Logo_HEC_Montreal_PMS_Coated.eps}}
+% --------- %
+% Commandes %
+% --------- %
+\newcommand{\couleur}[1]{%
+	\colorbox{#1}{\makebox[0.9\textwidth]{\color{white} #1}}
+}
+
+\newcommand{\degrade}[1]{%
+		\tiny
+		\colorbox{#1}{\makebox[0.29\textwidth]{\color{white} #1}}%
+		\colorbox{#1!80}{\makebox[0.1\textwidth]{\color{white} 80\%}}%
+		\colorbox{#1!60}{\makebox[0.1\textwidth]{\color{white} 60\%}}%
+		\colorbox{#1!40}{\makebox[0.1\textwidth]{\color{white} 40\%}}%
+		\colorbox{#1!20}{\makebox[0.1\textwidth]{\color{white} 20\%}}%
+		\colorbox{#1!10}{\makebox[0.1\textwidth]{\color{white} 10\%}}%
+}
+
+\newcommand{\HECpiedDePage}{}
+\newcommand{\piedDePage}[1]{%
+	\renewcommand{\HECpiedDePage}{\MakeUppercase{#1}}
+}
+
+\newcommand{\pageTitre}{%
+	{%
+		\setbeamertemplate{footline}{}
+		\begin{frame}
+			\titlepage
+		\end{frame}
+		\addtocounter{framenumber}{-1}
+	}
+}
+
+\makeatletter
+\newcommand*{\nomsectioncourante}{\@currentlabelname}
+\makeatother
+% ----------------------- %
+% Métadonnées du document %
+% ----------------------- %
+\title{Thème Beamer \\ pour HEC Montréal}
+\subtitle{Gabarit A}
+\author{Benoit Hamel}
+\date[2017-11-01]{\today}
+\subject{} % Sujet inséré dans les métadonnées du pdf
+\keywords{} % Mots-clés insérés dans les métadonnées du pdf
+\piedDePage{Benoit Hamel}
+
+\begin{document}
+
+% Page de titre
+\pageTitre
+
+\section*{Table des matières}
+
+\begin{frame}
+	\frametitle{Table des matières}
+	\framesubtitle{Parce qu'il faut toujours faire une table des matières...}
+	\tableofcontents
+\end{frame}
+
+\section{Palettes de couleurs}
+\subsection{Couleurs primaires}
+
+\begin{frame}
+	\frametitle{Couleurs primaires}
+	\framesubtitle{Les couleurs officielles}
+	\begin{itemize}
+		\item \couleur{bleuFoncePrimaire}
+		\item \couleur{cyanPrimaire}
+		\item \couleur{noirPrimaire}
+		\item \couleur{grisPrimaire}
+	\end{itemize}
+\end{frame}
+
+\subsection{Couleurs secondaires}
+
+\begin{frame}
+	\frametitle{Couleurs secondaires}
+	\framesubtitle{Pour mettre en valeur les couleurs officielles}
+	\begin{itemize}
+		\item \degrade{bleuFonceSecondaire}
+		\item \degrade{bleuPaleSecondaire}
+		\item \degrade{lilasSecondaire}
+		\item \degrade{aquaSecondaire}
+		\item \degrade{turquoiseSecondaire}
+	\end{itemize}
+\end{frame}
+
+\subsection{Couleurs tertiaires}
+
+\begin{frame}
+	\frametitle{Couleurs tertiaires}
+	\framesubtitle{Pour souligner ou mettre en valeur un propos éditorial}
+	\begin{itemize}
+		\item \degrade{rougeTertiaire}
+		\item \degrade{orangeTertiaire}
+		\item \degrade{jauneTertiaire}
+		\item \degrade{vertTertiaire}
+		\item \degrade{mauveTertiaire}
+		\item \degrade{roseTertiaire}
+	\end{itemize}
+\end{frame}
+
+\section{Structure des diapositives}
+
+\subsection{Diapositives en une colonne}
+
+\begin{frame}
+	Diapositive vide
+\end{frame}
+
+\begin{frame}
+	\frametitle{Titre et...}
+	... contenu
+\end{frame}
+
+\begin{frame}
+	\frametitle{Image avec...}
+	\vspace{-2.2mm}
+	\begin{block}{...soustitre}
+		[Ici une image...]
+	\end{block}
+\end{frame}
+
+\subsection{Diapositives en deux colonnes}
+
+\begin{frame}
+	\frametitle{Deux contenus}
+	\begin{columns}
+		\column{.5\textwidth}
+			Contenu de la colonne 1
+			
+			Deuxième ligne de la colonne 1
+			
+		\column{.5\textwidth}
+			Contenu de la colonne 2
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Comparaison}
+\begin{columns}
+	\column{.5\textwidth}
+		\vspace{-7mm}
+		\begin{block}{Comparaison 1}
+			Texte de la comparaison 1
+		\end{block}
+	\column{.5\textwidth}
+		\vspace{-7mm}
+		\begin{block}{Comparaison 2}
+			Texte de la comparaison 2
+		\end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Contenu avec légende}
+\begin{columns}
+	\column{.36\textwidth}
+		\vspace{-7mm}
+		\begin{block}{Légende}
+			Texte de la légende
+		\end{block}
+	\column{.64\textwidth}
+		\vspace{-7mm}
+		\begin{block}{}
+			Contenu
+		\end{block}	
+\end{columns}
+\end{frame}
+
+\end{document}
