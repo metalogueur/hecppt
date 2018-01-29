@@ -1,0 +1,17 @@
+# folders to ignore
+
+hecmontreal-110ans/
+
+# files to ignore
+
+gabarit.*
+gabarit-2.*
+
+# file extensions to ignore
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
