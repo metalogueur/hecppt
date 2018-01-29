@@ -53,15 +53,27 @@
 \setbeamercolor{sidebar}{bg=white,fg=white}
 \setbeamercolor{navigation symbols}{bg=grisPrimaire,fg=grisPrimaire}
 \setbeamercolor{frametitle}{bg=cyanPrimaire,fg=white}
-\setbeamercolor{itemize item}{fg=bleuFoncePrimaire}
+\setbeamercolor{itemize item}{fg=cyanPrimaire}
+\setbeamercolor{itemize subitem}{fg=cyanPrimaire!80}
+\setbeamercolor{itemize subsubitem}{fg=cyanPrimaire!60}
+\setbeamercolor{item projected}{fg=white,bg=cyanPrimaire}
+\setbeamercolor{subitem projected}{fg=white,bg=cyanPrimaire!80}
+\setbeamercolor{subsubitem projected}{fg=white,bg=cyanPrimaire!60}
+\setbeamercolor{description item}{fg=bleuFoncePrimaire}
 \setbeamercolor{pagetitre}{bg=cyanPrimaire,fg=bleuFoncePrimaire}
 \setbeamercolor{footline}{bg=white,fg=bleuFoncePrimaire}
 \setbeamercolor{section in toc}{fg=bleuFoncePrimaire}
 \setbeamercolor{sectionframelower}{bg=grisPrimaire}
-\setbeamercolor{block title}{fg=black}
+\setbeamercolor{block title}{fg=noirPrimaire,bg=grisPrimaire!20}
+\setbeamercolor{button}{fg=white,bg=bleuFonceSecondaire!60}
+\setbeamercolor{button border}{fg=bleuFonceSecondaire!80}
+\setbeamercolor{structure}{fg=bleuFoncePrimaire}
+\setbeamercolor{alerted text}{fg=white}
+\setbeamercolor{alertbox}{fg=white,bg=roseTertiaire}
 
 % Fonts Beamer
 \setbeamerfont*{block title}{series=\bfseries,family=\rmfamily,shape=\scshape,size=\large}
+\setbeamerfont{alerted text}{series=\bfseries}
 
 % Tailles Beamer
 \setbeamersize{sidebar width left=8.3125mm,sidebar width right=8.3125mm,text margin left=0mm,text margin right=0mm}
@@ -117,13 +129,24 @@
 		}
 	\end{overpic}
 }
-\setbeamertemplate{itemize items}[circle]
 \setbeamertemplate{section in toc}{%
 	\colorbox{grisPrimaire}{\makebox[.985\textwidth]{\color{white} \inserttocsection\hfill}}
 }
 \setbeamertemplate{subsection in toc}{%
 	\makebox[.05\textwidth]{}%
 	\colorbox{grisPrimaire!20}{\makebox[.935\textwidth]{\inserttocsubsection\hfill}}
+}
+\setbeamertemplate{itemize items}[circle]{}
+\setbeamertemplate{enumerate items}[circle]{}
+\setbeamertemplate{description item}{%
+	\textbf{\insertdescriptionitem}
+}
+\setbeamertemplate{alerted text begin}{%
+	\begin{beamercolorbox}[ht=2em,sep=.55em]{alertbox}
+		\centering
+}
+\setbeamertemplate{alerted text end}{%	
+	\end{beamercolorbox}
 }
 \AtBeginSection[]{%
 	\debutSectiontrue
@@ -203,6 +226,7 @@
 \pageTitre
 
 \section*{Table des matières}
+\hypertarget{tdm}{}
 
 \begin{frame}
 	\frametitle{Table des matières}
@@ -211,6 +235,7 @@
 \end{frame}
 
 \section{Palettes de couleurs}
+\hypertarget{paletteCouleurs}{}
 \subsection{Couleurs primaires}
 
 \begin{frame}
@@ -254,6 +279,7 @@
 \end{frame}
 
 \section{Structure des diapositives}
+\hypertarget{structureDiapos}{}
 
 \subsection{Diapositives en une colonne}
 
@@ -315,10 +341,96 @@
 		\end{block}
 	\column{.64\textwidth}
 		\vspace{-7mm}
-		\begin{block}{}
-			Contenu
-		\end{block}	
+			Contenu	
 \end{columns}
+\end{frame}
+
+\section{Éléments d'interface}
+\hypertarget{elementsInterface}{}
+
+\begin{frame}
+\frametitle{Liens et boutons}
+	\begin{columns}
+		\column{.5\textwidth}
+		\vspace{-7mm}
+		\begin{block}{Boutons}
+			\emph{Beamer Button}:\\			
+			\hyperlink{paletteCouleurs}{\beamerbutton{Section Palettes de couleurs}}
+			
+			\emph{Beamer GoTo Button}:\\
+			\hyperlink{structureDiapos}{\beamergotobutton{Section Structure des diapositives}}
+			
+			\emph{Beamer Skip Button}:\\
+			\hyperlink{elementsInterface}{\beamerskipbutton{Section Élements d'interface}}
+			
+			\emph{Beamer Return Button}:\\
+			\hyperlink{tdm}{\beamerreturnbutton{Table des matières}}
+		\end{block}
+		\column{.5\textwidth}
+		\vspace{-7mm}
+		\begin{block}{Liens}
+			
+		\end{block}
+	\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Listes à puces et listes numérotées}
+	
+	\begin{itemize}
+		\item Élément numéro un
+			\begin{itemize}
+				\item Élément numéro un point un
+					\begin{itemize}
+						\item Élément numéro un point un point un
+					\end{itemize}
+			\end{itemize}
+		\item Élément numéro deux
+		\item Élément numéro trois
+	\end{itemize}
+
+	\begin{enumerate}
+		\item Élément numéro un
+		\begin{enumerate}
+			\item Élément numéro un point un
+			\begin{enumerate}
+				\item Élément numéro un point un point un
+			\end{enumerate}
+		\end{enumerate}
+		\item Élément numéro deux
+		\item Élément numéro trois
+	\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Descriptions}
+
+	\begin{description}[ABBR]
+		\item[ABBR] Abréviation
+		\item[BAA] Baccalauréat en administration des affaires
+		\item[DESS] Diplôme d'études supérieures spécialisées
+		\item[HEC] Hautes études commerciales
+		\item[MBA] Maîtrise en administration des affaires
+		\item[MSc] Maîtrise ès Sciences
+		\item[PhD] Philosophiae Doctor (Doctorat)
+	\end{description}
+\end{frame}
+
+\begin{frame}
+\frametitle{Éléments structurels}
+	\structure{Une structure compilée avec la commande \texttt{\textbackslash structure}}.
+	
+	\begin{structureenv}
+		Une structure compilée avec l'environnement \texttt{structureenv}.
+	\end{structureenv}
+
+	\alert{Ceci est une alerte déclenchée avec la commande \texttt{\textbackslash alert}!}
+	
+	\begin{alertenv}
+		Ceci est une alerte déclenchée avec l'environnement \texttt{alertenv}!
+	\end{alertenv}
 \end{frame}
 
 \end{document}
