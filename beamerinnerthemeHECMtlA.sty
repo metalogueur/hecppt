@@ -1,0 +1,27 @@
+% --------------------------------- %
+% HEC Montréal Beamer Inner Theme A %
+% --------------------------------- %
+
+% ---------------- %
+% Beamer Templates %
+% ---------------- %
+
+\setbeamertemplate{section in toc}{%
+	\colorbox{grisPrimaire}{\makebox[.985\textwidth]{\color{white} \inserttocsection\hfill}}
+}
+\setbeamertemplate{subsection in toc}{%
+	\makebox[.05\textwidth]{}%
+	\colorbox{grisPrimaire!20}{\makebox[.935\textwidth]{\inserttocsubsection\hfill}}
+}
+\setbeamertemplate{itemize items}[circle]{}
+\setbeamertemplate{enumerate items}[circle]{}
+\setbeamertemplate{description item}{%
+	\textbf{\insertdescriptionitem}
+}
+\setbeamertemplate{alerted text begin}{%
+	\begin{beamercolorbox}[ht=2em,colsep*=.55em]{alertbox}
+		\centering
+	}
+\setbeamertemplate{alerted text end}{%	
+	\end{beamercolorbox}
+}
