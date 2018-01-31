@@ -17,30 +17,22 @@
 \usepackage{mathpazo}
 \usepackage[overload]{textcase}
 \usepackage{nameref}
+\usepackage{tabularx}
 
 \graphicspath{{img/}}
 
 \setlength\unitlength{1mm}	% Setting pour overpic
 
-
 % --------- %
 % Commandes %
 % --------- %
+
 \newcommand{\couleur}[1]{%
 	\colorbox{#1}{\makebox[0.9\textwidth]{\color{white} #1}}
 }
 
-\newcommand{\degrade}[1]{%
-		\tiny
-		\colorbox{#1}{\makebox[0.29\textwidth]{\color{white} #1}}%
-		\colorbox{#1!80}{\makebox[0.1\textwidth]{\color{white} 80\%}}%
-		\colorbox{#1!60}{\makebox[0.1\textwidth]{\color{white} 60\%}}%
-		\colorbox{#1!40}{\makebox[0.1\textwidth]{\color{white} 40\%}}%
-		\colorbox{#1!20}{\makebox[0.1\textwidth]{\color{white} 20\%}}%
-		\colorbox{#1!10}{\makebox[0.1\textwidth]{\color{white} 10\%}}%
-}
-
 \newcommand{\HECpiedDePage}{}
+
 \newcommand{\piedDePage}[1]{%
 	\renewcommand{\HECpiedDePage}{\MakeUppercase{#1}}
 }
@@ -58,9 +50,13 @@
 \makeatletter
 \newcommand*{\nomsectioncourante}{\@currentlabelname}
 \makeatother
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
 % ----------------------- %
 % Métadonnées du document %
 % ----------------------- %
+
 \title{Thème Beamer \\ pour HEC Montréal}
 \subtitle{Gabarit A}
 \author{Benoit Hamel}
@@ -87,44 +83,44 @@
 \hypertarget{paletteCouleurs}{}
 \subsection{Couleurs primaires}
 
-\begin{frame}
+\begin{frame}[c]
 	\frametitle{Couleurs primaires}
 	\framesubtitle{Les couleurs officielles}
-	\begin{itemize}
+	\begin{list}{}{}
 		\item \couleur{bleuFoncePrimaire}
 		\item \couleur{cyanPrimaire}
 		\item \couleur{noirPrimaire}
 		\item \couleur{grisPrimaire}
-	\end{itemize}
+	\end{list}
 \end{frame}
 
 \subsection{Couleurs secondaires}
 
-\begin{frame}
+\begin{frame}[c]
 	\frametitle{Couleurs secondaires}
-	\framesubtitle{Pour mettre en valeur les couleurs officielles}
-	\begin{itemize}
-		\item \degrade{bleuFonceSecondaire}
-		\item \degrade{bleuPaleSecondaire}
-		\item \degrade{lilasSecondaire}
-		\item \degrade{aquaSecondaire}
-		\item \degrade{turquoiseSecondaire}
-	\end{itemize}
+	\framesubtitle{Pour mettre en valeur les couleurs officielles}	
+	\begin{list}{}{}
+		\item \couleur{bleuFonceSecondaire}
+		\item \couleur{bleuPaleSecondaire}
+		\item \couleur{lilasSecondaire}
+		\item \couleur{aquaSecondaire}
+		\item \couleur{turquoiseSecondaire}
+	\end{list}
 \end{frame}
 
 \subsection{Couleurs tertiaires}
 
-\begin{frame}
+\begin{frame}[c]
 	\frametitle{Couleurs tertiaires}
 	\framesubtitle{Pour souligner ou mettre en valeur un propos éditorial}
-	\begin{itemize}
-		\item \degrade{rougeTertiaire}
-		\item \degrade{orangeTertiaire}
-		\item \degrade{jauneTertiaire}
-		\item \degrade{vertTertiaire}
-		\item \degrade{mauveTertiaire}
-		\item \degrade{roseTertiaire}
-	\end{itemize}
+	\begin{list}{}{}
+		\item \couleur{rougeTertiaire}
+		\item \couleur{orangeTertiaire}
+		\item \couleur{jauneTertiaire}
+		\item \couleur{vertTertiaire}
+		\item \couleur{mauveTertiaire}
+		\item \couleur{roseTertiaire}
+	\end{list}
 \end{frame}
 
 \section{Structure des diapositives}
@@ -197,7 +193,7 @@
 \end{columns}
 \end{frame}
 
-\section{Éléments d'interface}
+%\section{Éléments d'interface}
 \hypertarget{elementsInterface}{}
 
 \begin{frame}
