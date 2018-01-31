@@ -3,11 +3,6 @@
 hecmontreal-110ans/
 gabarits_hecmontreal/
 
-# files to ignore
-
-gabarit.*
-gabarit-2.*
-
 # file extensions to ignore
 *.aux
 *.log
