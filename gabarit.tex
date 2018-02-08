@@ -67,6 +67,15 @@
 	\end{block}
 }
 
+\newenvironment{HECcomparaison}[1]{%
+	\begin{column}[t]{.5\textwidth}
+		\vspace{-7mm}		
+		\begin{block}{#1}
+}{%
+		\end{block}
+	\end{column}
+}
+
 % ----------------------- %
 % Métadonnées du document %
 % ----------------------- %
@@ -175,16 +184,13 @@
 \begin{frame}
 \frametitle{Comparaison}
 \begin{columns}
-	\column{.5\textwidth}
-		\vspace{-7mm}
-		\begin{block}{Comparaison 1}
-			Texte de la comparaison 1
-		\end{block}
-	\column{.5\textwidth}
-		\vspace{-7mm}
-		\begin{block}{Comparaison 2}
-			Texte de la comparaison 2
-		\end{block}
+	\begin{HECcomparaison}{Comparaison 1}
+		Texte de la comparaison 1
+	\end{HECcomparaison}
+
+	\begin{HECcomparaison}{Comparaison 2}
+		Texte de la comparaison 2
+	\end{HECcomparaison}
 \end{columns}
 \end{frame}
 
