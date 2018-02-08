@@ -35,11 +35,11 @@
 	\colorbox{#1}{\makebox[0.9\textwidth]{\color{white} #1}}
 }
 
-\newcommand{\HECpiedDePage}{}
-\newcommand{\piedDePage}[1]{%
-	\renewcommand{\HECpiedDePage}{\MakeUppercase{#1}}
+\newcommand{\HECPIEDDEPAGE}{}
+\newcommand*{\HECauteur}[1]{%
+	\author{#1}
+	\renewcommand{\HECPIEDDEPAGE}{\MakeUppercase{#1}}
 }
-
 \newcommand{\pageTitre}{%
 	{%
 		\setbeamertemplate{footline}{}
@@ -58,11 +58,10 @@
 % ----------------------- %
 \title{Thème Beamer \\ pour HEC Montréal}
 \subtitle{Gabarit B}
-\author{Benoit Hamel}
+\HECauteur{Benoit Hamel}
 \date[2018-01-30]{\today}
 \subject{} % Sujet inséré dans les métadonnées du pdf
 \keywords{} % Mots-clés insérés dans les métadonnées du pdf
-\piedDePage{Benoit Hamel}
 
 \begin{document}
 
