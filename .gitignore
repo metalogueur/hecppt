@@ -11,3 +11,6 @@ gabarits_hecmontreal/
 *.snm
 *.synctex.gz
 *.toc
+*.dvi
+*.glo
+*.idx
