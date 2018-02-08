@@ -53,6 +53,20 @@
 \makeatletter
 \newcommand*{\nomsectioncourante}{\@currentlabelname}
 \makeatother
+
+% -------------- %
+% Environnements %
+% -------------- %
+
+\newenvironment{HECimagesstitre}[1]{%
+	\vspace{-2.2mm}
+	\begin{block}{#1}
+		\begin{figure}
+}{%
+		\end{figure}
+	\end{block}
+}
+
 % ----------------------- %
 % Métadonnées du document %
 % ----------------------- %
@@ -137,13 +151,10 @@
 
 \begin{frame}
 	\frametitle{Image avec...}
-	\vspace{-2.2mm}
-	\begin{block}{...soustitre}
-		\begin{figure}
-			\includegraphics[origin=c,height=45mm]{image-template.eps}
-			\caption{Ceci est la légende de l'image}
-		\end{figure}
-	\end{block}
+	\begin{HECimagesstitre}{...soustitre}	
+		\includegraphics[origin=c,height=45mm]{image-template.eps}
+		\caption{Ceci est la légende de l'image}
+	\end{HECimagesstitre}
 \end{frame}
 
 \subsection{Diapositives en deux colonnes}
