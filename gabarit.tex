@@ -1,99 +1,10 @@
-\documentclass[aspectratio=1610,compress,t,english,french]{hecppt}
-\mode<presentation>
-
-\newif\ifdebutSection
-
-%\usetheme{HECMtlA}
-%\usetheme{HECMtlB}
-%\usetheme{HECMtlC}
-%\usetheme{HECMtlD}
-\usetheme{HECMtlE}
-
-% -------- %
-% Packages %
-% -------- %
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{xcolor}
-\usepackage{graphicx}
-\usepackage[abs]{overpic}
-\usepackage{babel}
-\usepackage{amsmath}
-\usepackage{mathpazo}
-\usepackage[overload]{textcase}
-\usepackage{nameref}
-
-\graphicspath{{img/}}
-
-\setlength\unitlength{1mm}	% Setting pour overpic
-
-
-% --------- %
-% Commandes %
-% --------- %
-\newcommand{\couleur}[1]{%
-	\colorbox{#1}{\makebox[0.9\textwidth]{\color{white} #1}}
-}
-
-\newcommand{\HECPIEDDEPAGE}{}
-\newcommand*{\HECauteur}[1]{%
-	\author{#1}
-	\renewcommand{\HECPIEDDEPAGE}{\MakeUppercase{#1}}
-}
-\newcommand{\pageTitre}{%
-	{%
-		\setbeamertemplate{footline}{}
-		\begin{frame}
-			\titlepage
-		\end{frame}
-		\addtocounter{framenumber}{-1}
-	}
-}
-
-\makeatletter
-\newcommand*{\nomsectioncourante}{\@currentlabelname}
-\makeatother
-
-% -------------- %
-% Environnements %
-% -------------- %
-
-\newenvironment{HECimagesstitre}[1]{%
-	\vspace{-2.2mm}
-	\begin{block}{#1}
-		\begin{figure}
-}{%
-		\end{figure}
-	\end{block}
-}
-\newenvironment{HECcomparaison}[1]{%
-	\begin{column}[t]{.5\textwidth}
-		\vspace{-7mm}		
-		\begin{block}{#1}
-}{%
-		\end{block}
-	\end{column}
-}
-\newenvironment{HEClegende}[1]{%
-	\begin{column}[t]{.36\textwidth}
-		\vspace{-7mm}
-		\begin{block}{#1}
-}{%
-		\end{block}
-	\end{column}
-}
-\newenvironment{HECcontenuLegende}{%
-	\begin{column}[t]{.64\textwidth}
-		\vspace{-7mm}
-}{%
-	\end{column}
-}
+\documentclass[aspectratio=1610,compress,t,gabarita,english,french]{hecppt}
 
 % ----------------------- %
 % Métadonnées du document %
 % ----------------------- %
 \title{Thème Beamer \\ pour HEC Montréal}
-\subtitle{Gabarit B}
+\subtitle{Gabarits a,b,c,d,e}
 \HECauteur{Benoit Hamel}
 \date[2018-01-30]{\today}
 \subject{} % Sujet inséré dans les métadonnées du pdf

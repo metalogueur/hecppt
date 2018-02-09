@@ -43,8 +43,26 @@
 \setbeamercolor{subitem projected}{fg=white,bg=bleuFoncePrimaire}
 \setbeamercolor{subsubitem projected}{fg=white,bg=bleuFoncePrimaire}
 \setbeamercolor{description item}{fg=bleuFoncePrimaire}
-\setbeamercolor{pagetitre}{fg=white,bg=bleuFonceSecondaire}
-\setbeamercolor{pagetitrefoot}{fg=white,bg=bleuFonceSecondaire}
+\ifgabarita
+	\setbeamercolor{pagetitre}{bg=cyanPrimaire,fg=bleuFoncePrimaire}
+	\setbeamercolor{pagetitrefoot}{bg=cyanPrimaire,fg=white}
+\fi
+\ifgabaritb
+	\setbeamercolor{pagetitre}{fg=bleuFoncePrimaire,bg=aquaSecondaire}
+	\setbeamercolor{pagetitrefoot}{fg=white,bg=aquaSecondaire}
+\fi
+\ifgabaritc
+	\setbeamercolor{pagetitre}{fg=bleuPaleSecondaire,bg=bleuFoncePrimaire}
+	\setbeamercolor{pagetitrefoot}{fg=white,bg=bleuFoncePrimaire}
+\fi
+\ifgabaritd
+	\setbeamercolor{pagetitre}{fg=white,bg=bleuFonceSecondaire}
+	\setbeamercolor{pagetitrefoot}{fg=white,bg=bleuFonceSecondaire}
+\fi
+\ifgabarite
+	\setbeamercolor{pagetitre}{fg=white,bg=cyanPrimaire}
+	\setbeamercolor{pagetitrefoot}{fg=white,bg=cyanPrimaire}
+\fi
 \setbeamercolor{footline}{bg=white,fg=bleuFoncePrimaire}
 \setbeamercolor{section in toc}{fg=bleuFoncePrimaire}
 \setbeamercolor{sectionframelower}{bg=grisPrimaire}

@@ -40,22 +40,22 @@
 \DeclareOption{gabaritb}{%
 	\renewcommand{\HECbgfile}{background-b.eps}
 	\renewcommand{\HECsectionbgfile}{section-background-b.eps}
-	\gabaritatrue
+	\gabaritbtrue
 }
 \DeclareOption{gabaritc}{%
 	\renewcommand{\HECbgfile}{background-c.eps}
 	\renewcommand{\HECsectionbgfile}{section-background-c.eps}
-	\gabaritatrue
+	\gabaritctrue
 }
 \DeclareOption{gabaritd}{%
 	\renewcommand{\HECbgfile}{background-d.eps}
 	\renewcommand{\HECsectionbgfile}{section-background-d.eps}
-	\gabaritatrue
+	\gabaritdtrue
 }
 \DeclareOption{gabarite}{%
 	\renewcommand{\HECbgfile}{background-e.eps}
 	\renewcommand{\HECsectionbgfile}{section-background-e.eps}
-	\gabaritatrue
+	\gabaritetrue
 }
 
 % ----------------------- %
