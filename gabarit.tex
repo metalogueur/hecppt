@@ -76,6 +76,22 @@
 	\end{column}
 }
 
+\newenvironment{HEClegende}[1]{%
+	\begin{column}[t]{.36\textwidth}
+		\vspace{-7mm}
+		\begin{block}{#1}
+}{%
+		\end{block}
+	\end{column}
+}
+
+\newenvironment{HECcontenuLegende}{%
+	\begin{column}[t]{.64\textwidth}
+		\vspace{-7mm}
+}{%
+	\end{column}
+}
+
 % ----------------------- %
 % Métadonnées du document %
 % ----------------------- %
@@ -197,14 +213,12 @@
 \begin{frame}
 \frametitle{Contenu avec légende}
 \begin{columns}
-	\column{.36\textwidth}
-		\vspace{-7mm}
-		\begin{block}{Légende}
-			Texte de la légende
-		\end{block}
-	\column{.64\textwidth}
-		\vspace{-7mm}
-			Contenu	
+	\begin{HEClegende}{Légende}
+		Texte de la légende
+	\end{HEClegende}
+	\begin{HECcontenuLegende}
+		Contenu
+	\end{HECcontenuLegende}
 \end{columns}
 \end{frame}
 
