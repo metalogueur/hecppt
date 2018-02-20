@@ -1,0 +1,388 @@
+% \iffalse
+%
+% Copyright 2017 HEC Montreal
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3c
+% of this license or (at your option) any later version.
+%
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008/05/04 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Benoit Hamel
+% <benoit.2.hamel@hec.ca>.
+%
+% This work consists of the files hecthese.dtx and hecthese.ins
+% and the derived files listed in the README file.
+%
+% \fi
+% \iffalse
+%<*dtx>
+\ProvidesFile{hecppt.dtx}
+%</dtx>
+%<class>\NeedsTeXFormat{LaTeX2e}
+%<class>\ProvidesClass{hecppt}[2018/02/14 v0.1 Classe pour des presentations beamer avec l'image de marque HEC Montreal]
+%<*driver>
+\documentclass[10pt,english,frenchb]{ltxdoc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{fontawesome}
+\usepackage{framed}
+\usepackage{url}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{metalogo}
+\usepackage{hyperref}
+
+\DisableCrossrefs
+\CodelineIndex
+\RecordChanges
+\GlossaryPrologue{\section*{Historique des versions}%
+	\addcontentsline{toc}{section}{Historique des versions}}
+
+\definecolor{liens}{rgb}{0,0.35,0.65}
+\definecolor{shadecolor}{rgb}{0.93,0.97,0.99}
+\definecolor{TFFrameColor}{rgb}{0,0.235,0.443}
+\definecolor{TFTitleColor}{rgb}{1,1,1}
+
+\hypersetup{
+	colorlinks=true,
+	allcolors=liens,
+	pdftitle={Guide d'utilisation de la classe hecppt},
+	pdfauthor={Benoit Hamel, HEC Montréal}
+}
+
+\frenchbsetup{
+	og=«, fg=»
+}
+
+\addto\captionsfrench{%
+	\renewcommand{\tablename}{Tableau}
+}
+
+\MakeShortVerb{\+}
+
+\newcommand{\hecppt}{\textsf{\bfseries hecppt}}
+\newcommand{\oui}{\color{green}\faCheck}
+\newcommand{\non}{\color{red}\faBan}
+\newcommand{\couleur}[1]{%
+	\colorbox{#1}{\makebox[0.9\textwidth]{\color{white} #1}}
+}
+
+\newlist{HECcompilation}{itemize}{1}
+\setlist[HECcompilation]{label=\faCog}
+
+\begin{document}
+	\DocInput{hecppt.dtx}
+\end{document}
+%</driver>
+% \fi
+% \CheckSum{117}
+% \DoNotIndex{\RequirePackage,\ExecuteOptions,\ProcessOptions}
+% \DoNotIndex{\newcommand,\newcommand*,\newenvironment}
+% \DoNotIndex{\hecppt,\oui,\non,\couleur}
+% \DoNotIndex{\LaTeX,\href,\TeX,\clearpage,\bibitem,\url,\emph,\cite,\item,\textbf}
+% \changes{0.1}{2018-02-14}{Première version bêta lancée pour les tests usagers}
+% \title{\hecppt : la classe \LaTeX\ pour des présentations avec l'image de marque HEC Montréal}
+% \author{Benoit Hamel, Bibliothèque, HEC Montréal}
+% \date{\today}
+% \maketitle
+%
+%	\begin{abstract}
+%		La classe \hecppt\ a été conçue afin de permettre à la communauté HEC Montréal
+%		de pouvoir créer des présentations avec le système de composition de documents
+%		\LaTeX\ et la classe de document \emph{beamer}\cite{beamer} tout en respectant
+%		l'\href{http://marque.hec.ca/}{image de marque} de 	l'université conçue par le 
+%		Studio de design graphique. Tout comme les gabarits	\emph{Microsoft Powerpoint}
+%		élaborés par le Studio, cette classe propose cinq gabarits différents à utiliser.
+%	\end{abstract}
+%
+%	\addtocounter{section}{-1}
+%	\section{Pré-requis}
+%
+%		L'utilisation de la classe \hecppt\ suppose que vous avez au préalable téléchargé
+%		et installé une distribution \TeX\ de même qu'un éditeur de code intégré. Pour la
+%		conception de cette classe, la distribution \href{https://www.tug.org/texlive/}{\TeX Live 2017}
+%		et l'éditeur de code \href{https://www.texstudio.org/}{\TeX Studio} ont été utilisés.
+%
+%		L'utilisation de la classe suppose également que vous avez lu la documentation de
+%		la classe \emph{beamer} de laquelle \hecppt\ est dérivée. La présentation documentation ne vise
+%		qu'à présenter les fonctionnalités de \hecppt.
+%
+%	\section{Installation}
+%
+%		L'archive +.zip+ que vous avez téléchargée contient les fichiers suivants:
+%
+%		\begin{itemize}
+%			\item \textbf{hecppt.ins}: le fichier d'installation de la classe;
+%			\item \textbf{hecppt.dtx}: le code source documenté de la classe;
+%			\item \textbf{hecppt.pdf}: la documentation de la classe;
+%			\item \textbf{README.md}: un fichier README;
+%			\item \textbf{<img/>}: le répertoire d'images nécessaires aux gabarits.
+%		\end{itemize}
+%
+%		Suivez les étapes suivantes pour installer la classe :
+%
+%		\begin{enumerate}
+%			\item Créez-vous un répertoire de travail.
+%			\item Décompressez l'archive +.zip+ dans votre répertoire de travail.
+%			\item Ouvrez un éditeur de ligne de commande.
+%			\item Changez de répertoire pour atteindre votre répertoire de travail.
+%			\item Saisissez la commande suivante dans l'éditeur : \\
+%				\begin{shaded*}
+%					+latex hecppt.ins+
+%				\end{shaded*}
+% 		\end{enumerate}
+%
+%		La commande créera une série de fichiers dont vous aurez besoin pour créer
+%		votre présentation:
+%
+%		\begin{itemize}
+%			\item Fichiers du thème \emph{beamer} HEC Montréal:
+%				\begin{itemize}
+%					\item \textbf{beamerthemeHECMtl.sty}: fichier de base du thème;
+%					\item \textbf{beamercolorthemeHECMtl.sty}: palettes de couleurs;
+%					\item \textbf{beamerfontthemeHECMtl.sty}: configuration des polices;
+%					\item \textbf{beamerouterthemeHECMtl.sty}: configuration des entêtes,
+%						des pieds de pages et des pages titres;
+%					\item \textbf{beamerinnerthemeHECMtl.sty}: configuration des éléments
+%						internes des diapositives.
+%				\end{itemize}
+%		\end{itemize}
+%
+%
+% \StopEventually{
+%	\clearpage
+%	\begin{thebibliography}{99}
+%		\bibitem{beamer}
+%			Tantau, Till, Vedran Mileti\'{c} et Joseph Wright (2017).
+%			\emph{Package beamer}, Comprehensive \TeX\ Archive Network. Consulté le 14 février 2018
+%			à \url{https://ctan.org/pkg/beamer}.
+%	\end{thebibliography}
+% }
+%
+% ^^A Début du code source de la classe
+%
+% \appendix
+%
+%	\section{Code source de la classe}
+%
+%		Dans cette section, vous trouverez le code source de la classe \hecppt. Si vous voulez
+%		comprendre comment elle est programmée, aider à la déboguer, etc., cette section est pour
+%		vous.
+%
+%	\subsection{Valeurs booléennes}
+%
+%		Le booléen +debutSection+ sert lors du formatage du pied de page des diapositives. Si on est
+%		en début de section, \hecppt\ va générer une page titre de section. À l'intérieur du 
+%		\emph{beamer template} +footline+, +debutSection+ désactive l'affichage du numéro de
+%		diapositive.
+%
+%		Les booléens +gabaritx+ servent à déterminer les fichiers d'images de fond ainsi que les
+%		palettes de couleurs qui seront utilisés dans les pages titres. Par défaut, ces booléens
+%		sont initialisés à +false+ et sont modifiés à +true+ en fonction de l'option de classe
+%		choisie.
+%
+%    \begin{macrocode}
+%<*class>
+
+% Valeurs booléennes
+\newif\ifdebutSection
+\newif\ifgabarita
+\newif\ifgabaritb
+\newif\ifgabaritc
+\newif\ifgabaritd
+\newif\ifgabarite
+
+% Valeurs par défaut
+\gabaritafalse
+\gabaritbfalse
+\gabaritcfalse
+\gabaritdfalse
+\gabaritefalse
+
+%    \end{macrocode}
+%
+%	\subsection{Options de la classe}
+%
+%		Les seules options de \hecppt\ concernent le gabarit à utiliser. À l'intérieur
+%		de chacune des options, on initialise les nom de fichiers d'images de fond
+%		à utiliser dans les pages titres et on change la valeur du booléen de gabarit
+%		correspondant à +true+.
+%
+%		Les commandes +\HECbgfile+ et +\HECsectionbgfile+ servent de conteneurs pour
+%		les noms de fichiers. Ces commandes sont utilisées dans le
+%		\emph{beamer template} +title page+ et la commande +\AtBeginSection+
+%		respectivement.
+%
+%    \begin{macrocode}
+
+% Commandes pour les noms de fichiers d'images de fond
+\newcommand{\HECbgfile}{}
+\newcommand{\HECsectionbgfile}{}
+
+% Déclaration des options de la classe
+\DeclareOption{gabarita}{%
+	\renewcommand{\HECbgfile}{background-a.eps}
+	\renewcommand{\HECsectionbgfile}{section-background-a.eps}
+	\gabaritatrue
+}
+\DeclareOption{gabaritb}{%
+	\renewcommand{\HECbgfile}{background-b.eps}
+	\renewcommand{\HECsectionbgfile}{section-background-b.eps}
+	\gabaritbtrue
+}
+\DeclareOption{gabaritc}{%
+	\renewcommand{\HECbgfile}{background-c.eps}
+	\renewcommand{\HECsectionbgfile}{section-background-c.eps}
+	\gabaritctrue
+}
+\DeclareOption{gabaritd}{%
+	\renewcommand{\HECbgfile}{background-d.eps}
+	\renewcommand{\HECsectionbgfile}{section-background-d.eps}
+	\gabaritdtrue
+}
+\DeclareOption{gabarite}{%
+	\renewcommand{\HECbgfile}{background-e.eps}
+	\renewcommand{\HECsectionbgfile}{section-background-e.eps}
+	\gabaritetrue
+}
+
+%    \end{macrocode}
+%
+%	\subsection{Chargement de la classe}
+%
+%		\hecppt\ est chargée avec les options saisies par l'utilisateur
+%		et charge la classe \emph{beamer} avec les options correspondantes.
+%
+%		Le mode +presentation+ est ensuite activé, de même que le thème
+%		HEC Montréal.
+%
+%    \begin{macrocode}
+
+% Chargement de la classe
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{beamer}}
+\ExecuteOptions{}
+\ProcessOptions
+\LoadClass{beamer}
+
+% Mode et thème beamer
+\mode<presentation>
+\usetheme{HECMtl}
+
+%    \end{macrocode}
+%
+%	\subsection{\emph{Packages} requis}
+%
+%		La classe \hecppt\ requiert très peu de \emph{packages} par défaut.
+%		La classe \emph{beamer} en charge déjà une panoplie, et ceux chargés
+%		avec \hecppt\ ne servent qu'à gérer l'image de marque HEC Montréal et
+%		à accommoder les utilisateurs francophones (ou de toute autre langue
+%		nécessitant des caractères accentués).
+%
+%    \begin{macrocode}
+
+% Packages requis
+\RequirePackage[utf8]{inputenc}		% Utilisation des diacritiques dans le texte
+\RequirePackage[T1]{fontenc}		% Utilisation des polices T1
+\RequirePackage{xcolor}				% Gestion des couleurs
+\RequirePackage{graphicx}			% Gestion des images
+\RequirePackage[abs]{overpic}		% Découpage des pages titres en blocs
+\RequirePackage{babel}				% Support multilingue
+\RequirePackage{amsmath}			% Package obligatoire pour les maths
+\RequirePackage{mathpazo}			% Utilisation de la police Palatino
+\RequirePackage[overload]{textcase}	% Gestion des casses de caractères
+\RequirePackage{nameref}			% Référencement des sections par le nom
+
+%    \end{macrocode}
+%
+%	\subsection{Options pour le \emph{package overpic}}
+%
+%		Le \emph{package overpic} est utilisé pour mettre en forme les pages titres
+%		d'une présentation et des sections. Il permet de juxtaposer images, couleurs,
+%		texte et commandes \LaTeX\ à l'intérieur d'une grille prédéfinie. Afin que le
+%		\emph{package} fonctionne correctement, il faut déterminer l'emplacement des
+%		images (commande +\graphicspath+)de même que la valeur par défaut de la grille 
+%		(commande +\unitlength+).
+%
+%		Étant donné que la commande +\graphicspath+ est	utilisée pour l'ensemble des 
+%		images incluses dans une présentation, vous devrez placer vos propres images 
+%		dans le même répertoire, soit +img/+.
+%
+%    \begin{macrocode}
+
+% Settings pour overpic 
+\graphicspath{{img/}}
+\setlength\unitlength{1mm}
+
+%    \end{macrocode}
+%
+%	\subsection{Commandes internes}
+%
+%		Très peu de commandes ont été créées pour \hecppt\ et toutes servent à la mise en
+%		forme des diapositives.
+%
+%    \begin{macrocode}	
+
+% Nouvelles commandes
+\newcommand{\HECPIEDDEPAGE}{}
+\newcommand*{\HECauteur}[1]{%
+	\author{#1}
+	\renewcommand{\HECPIEDDEPAGE}{\MakeUppercase{#1}}
+}
+\newcommand{\pageTitre}{%
+	{%
+		\setbeamertemplate{footline}{}
+		\begin{frame}
+		\titlepage
+	\end{frame}
+	\addtocounter{framenumber}{-1}
+}
+}
+\makeatletter
+\newcommand*{\nomsectioncourante}{\@currentlabelname}
+\makeatother
+
+% ----------------------- %
+% Nouveaux environnements %
+% ----------------------- %
+\newenvironment{HECimagesstitre}[1]{%
+	\vspace{-2.2mm}
+	\begin{block}{#1}
+		\begin{figure}
+}{%
+		\end{figure}
+	\end{block}
+}
+\newenvironment{HECcomparaison}[1]{%
+	\begin{column}[t]{.5\textwidth}
+		\vspace{-7mm}		
+		\begin{block}{#1}
+}{%
+		\end{block}
+	\end{column}
+}
+\newenvironment{HEClegende}[1]{%
+	\begin{column}[t]{.36\textwidth}
+		\vspace{-7mm}
+		\begin{block}{#1}
+}{%
+		\end{block}
+	\end{column}
+}
+\newenvironment{HECcontenuLegende}{%
+	\begin{column}[t]{.64\textwidth}
+		\vspace{-7mm}
+}{%
+	\end{column}
+}
+%</class>
+%    \end{macrocode}
+%
+% \Finale
