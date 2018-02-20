@@ -83,7 +83,7 @@
 \end{document}
 %</driver>
 % \fi
-% \CheckSum{117}
+% \CheckSum{113}
 % \DoNotIndex{\RequirePackage,\ExecuteOptions,\ProcessOptions}
 % \DoNotIndex{\newcommand,\newcommand*,\newenvironment}
 % \DoNotIndex{\hecppt,\oui,\non,\couleur}
@@ -325,33 +325,66 @@
 %
 %	\subsection{Commandes internes}
 %
-%		Très peu de commandes ont été créées pour \hecppt\ et toutes servent à la mise en
-%		forme des diapositives.
+%		Très peu de commandes ont été créées pour \hecppt. Toutes servent à la mise en
+%		forme des diapositives et à minimiser le code dans votre document.
+%
+%		+\HECauteur+ a été créée afin de formater le nom de l'auteur dans le pied de page
+%		des diapositives. Le premier argument est la version courte du nom de l'auteur, que
+%		la commande transforme en lettres capitales. Cette version est utilisée dans le pied
+%		de page des diapositives grâce à la commande +\insertshortauthor+. Le deuxième argument
+%		de +\HECauteur+ est la version longue du nom de l'auteur.
 %
 %    \begin{macrocode}	
 
 % Nouvelles commandes
-\newcommand{\HECPIEDDEPAGE}{}
-\newcommand*{\HECauteur}[1]{%
-	\author{#1}
-	\renewcommand{\HECPIEDDEPAGE}{\MakeUppercase{#1}}
+\newcommand{\HECauteur}[2]{%
+	\author[\MakeUppercase{#1}]{#2}
 }
+
+%    \end{macrocode}
+%
+%		La commande +\pageTitre+ sert à insérer la page titre de la présentation. Elle efface
+%		le pied de page, en conformité avec les gabarits \emph{Microsoft Powerpoint} élaborés
+%		par le Studio de design graphique et retire la page titre du décompte de
+%		diapositives.
+%
+%    \begin{macrocode}
+
 \newcommand{\pageTitre}{%
 	{%
 		\setbeamertemplate{footline}{}
 		\begin{frame}
-		\titlepage
-	\end{frame}
-	\addtocounter{framenumber}{-1}
+			\titlepage
+		\end{frame}
+		\addtocounter{framenumber}{-1}
+	}
 }
-}
+
+%    \end{macrocode}
+%
+%		La commande +\nomsectioncourante+ n'est pas utilisée dans le \emph{front end} de la classe
+%		\hecppt. Elle sert lors du formatage des pages titre de sections, à l'intérieur de la commande
+%		+\AtBeginSection+, où le titre de la section est placé à l'intérieur du bloc de titre.
+%
+%    \begin{macrocode}
+
 \makeatletter
 \newcommand*{\nomsectioncourante}{\@currentlabelname}
 \makeatother
 
-% ----------------------- %
-% Nouveaux environnements %
-% ----------------------- %
+%    \end{macrocode}
+%
+%	\subsection{Environnements internes}
+%
+%		Tous les environnements de la classe existent pour uniformiser la mise en page
+%		des diapositives et le positionnement de leurs éléments dans l'espace. La classe
+%		\emph{beamer} positionne les +blocks+ et les +columns+ différement. Les
+%		environnements de \hecppt\ font en sorte que la ligne de base des éléments 
+%		(\emph{baseline}) est la même.
+%
+%    \begin{macrocode}
+
+% Nouveaux environnements
 \newenvironment{HECimagesstitre}[1]{%
 	\vspace{-2.2mm}
 	\begin{block}{#1}
@@ -360,6 +393,7 @@
 		\end{figure}
 	\end{block}
 }
+
 \newenvironment{HECcomparaison}[1]{%
 	\begin{column}[t]{.5\textwidth}
 		\vspace{-7mm}		
@@ -368,6 +402,7 @@
 		\end{block}
 	\end{column}
 }
+
 \newenvironment{HEClegende}[1]{%
 	\begin{column}[t]{.36\textwidth}
 		\vspace{-7mm}
@@ -376,6 +411,7 @@
 		\end{block}
 	\end{column}
 }
+
 \newenvironment{HECcontenuLegende}{%
 	\begin{column}[t]{.64\textwidth}
 		\vspace{-7mm}

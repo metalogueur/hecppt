@@ -98,10 +98,8 @@
 \newcommand{\couleur}[1]{%
 	\colorbox{#1}{\makebox[0.9\textwidth]{\color{white} #1}}
 }
-\newcommand{\HECPIEDDEPAGE}{}
-\newcommand*{\HECauteur}[1]{%
-	\author{#1}
-	\renewcommand{\HECPIEDDEPAGE}{\MakeUppercase{#1}}
+\newcommand{\HECauteur}[2]{%
+	\author[\MakeUppercase{#1}]{#2}
 }
 \newcommand{\pageTitre}{%
 	{%
