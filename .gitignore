@@ -2,6 +2,7 @@
 
 hecmontreal-110ans/
 gabarits_hecmontreal/
+hecppt/
 
 # file extensions to ignore
 *.aux
@@ -16,3 +17,8 @@ gabarits_hecmontreal/
 *.idx
 *.tex
 *.sty
+*.zip
+*.cls
+
+#files to ignore
+gabarit.pdf
