@@ -14,3 +14,5 @@ gabarits_hecmontreal/
 *.dvi
 *.glo
 *.idx
+*.tex
+*.sty
