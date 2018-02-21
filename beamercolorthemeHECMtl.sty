@@ -43,26 +43,26 @@
 \setbeamercolor{subitem projected}{fg=white,bg=bleuFoncePrimaire}
 \setbeamercolor{subsubitem projected}{fg=white,bg=bleuFoncePrimaire}
 \setbeamercolor{description item}{fg=bleuFoncePrimaire}
-\ifgabarita
+\ifthenelse{\boolean{gabarita}}{%
 	\setbeamercolor{pagetitre}{bg=cyanPrimaire,fg=bleuFoncePrimaire}
 	\setbeamercolor{pagetitrefoot}{bg=cyanPrimaire,fg=white}
-\fi
-\ifgabaritb
+}{}
+\ifthenelse{\boolean{gabaritb}}{%
 	\setbeamercolor{pagetitre}{fg=bleuFoncePrimaire,bg=aquaSecondaire}
 	\setbeamercolor{pagetitrefoot}{fg=white,bg=aquaSecondaire}
-\fi
-\ifgabaritc
+}{}
+\ifthenelse{\boolean{gabaritc}}{%
 	\setbeamercolor{pagetitre}{fg=bleuPaleSecondaire,bg=bleuFoncePrimaire}
 	\setbeamercolor{pagetitrefoot}{fg=white,bg=bleuFoncePrimaire}
-\fi
-\ifgabaritd
+}{}
+\ifthenelse{\boolean{gabaritd}}{%
 	\setbeamercolor{pagetitre}{fg=white,bg=bleuFonceSecondaire}
 	\setbeamercolor{pagetitrefoot}{fg=white,bg=bleuFonceSecondaire}
-\fi
-\ifgabarite
+}{}
+\ifthenelse{\boolean{gabarite}}{%
 	\setbeamercolor{pagetitre}{fg=white,bg=cyanPrimaire}
 	\setbeamercolor{pagetitrefoot}{fg=white,bg=cyanPrimaire}
-\fi
+}{}
 \setbeamercolor{footline}{bg=white,fg=bleuFoncePrimaire}
 \setbeamercolor{section in toc}{fg=bleuFoncePrimaire}
 \setbeamercolor{sectionframelower}{bg=grisPrimaire}

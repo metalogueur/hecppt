@@ -7,21 +7,22 @@
 % ------------------ %
 % Valeurs booléennes %
 % ------------------ %
-\newif\ifdebutSection
-\newif\ifgabarita
-\newif\ifgabaritb
-\newif\ifgabaritc
-\newif\ifgabaritd
-\newif\ifgabarite
+\RequirePackage{ifthen}
 
-% ------------------ %
-% Valeurs par défaut %
-% ------------------ %
-\gabaritafalse
-\gabaritbfalse
-\gabaritcfalse
-\gabaritdfalse
-\gabaritefalse
+% Valeurs booléennes
+\newboolean{debutSection}
+\newboolean{gabarita}
+\newboolean{gabaritb}
+\newboolean{gabaritc}
+\newboolean{gabaritd}
+\newboolean{gabarite}
+
+% Valeurs par défaut
+\setboolean{gabarita}{false}
+\setboolean{gabaritb}{false}
+\setboolean{gabaritc}{false}
+\setboolean{gabaritd}{false}
+\setboolean{gabarite}{false}
 
 % ---------------------------------------------------- %
 % Commandes pour les noms de fichiers d'images de fond %
@@ -35,27 +36,27 @@
 \DeclareOption{gabarita}{%
 	\renewcommand{\HECbgfile}{background-a.eps}
 	\renewcommand{\HECsectionbgfile}{section-background-a.eps}
-	\gabaritatrue
+	\setboolean{gabarita}{true}
 }
 \DeclareOption{gabaritb}{%
 	\renewcommand{\HECbgfile}{background-b.eps}
 	\renewcommand{\HECsectionbgfile}{section-background-b.eps}
-	\gabaritbtrue
+	\setboolean{gabaritb}{true}
 }
 \DeclareOption{gabaritc}{%
 	\renewcommand{\HECbgfile}{background-c.eps}
 	\renewcommand{\HECsectionbgfile}{section-background-c.eps}
-	\gabaritctrue
+	\setboolean{gabaritc}{true}
 }
 \DeclareOption{gabaritd}{%
 	\renewcommand{\HECbgfile}{background-d.eps}
 	\renewcommand{\HECsectionbgfile}{section-background-d.eps}
-	\gabaritdtrue
+	\setboolean{gabaritd}{true}
 }
 \DeclareOption{gabarite}{%
 	\renewcommand{\HECbgfile}{background-e.eps}
 	\renewcommand{\HECsectionbgfile}{section-background-e.eps}
-	\gabaritetrue
+	\setboolean{gabarite}{true}
 }
 
 % ----------------------- %

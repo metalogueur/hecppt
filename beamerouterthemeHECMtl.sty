@@ -25,11 +25,11 @@
 			\hfill
 			\insertshortauthor
 			\hfill
-			\ifdebutSection
-			\color{white}\insertframenumber
-			\else	
-			\insertframenumber
-			\fi
+			\ifthenelse{\boolean{debutSection}}{%
+				\color{white}\insertframenumber
+			}{%
+				\insertframenumber
+			}
 		}
 	\end{minipage}	
 	\vspace{4.375mm}
@@ -61,25 +61,25 @@
 }
 
 \AtBeginSection[]{%
-	\debutSectiontrue
+	\setboolean{debutSection}{true}
 	\begin{frame}
-	\begin{overpic}[width=\textwidth]
-		{\HECsectionbgfile}
-		\put(0,42){%
-			\begin{beamercolorbox}[wd=96mm,ht=27.25mm,sep=1ex]{pagetitre}
-				\huge\textbf{\nomsectioncourante}
-			\end{beamercolorbox}
-		}
-		\put(0,35){%
-			\begin{beamercolorbox}[wd=96mm,ht=6mm,sep=1ex]{pagetitre}
-			\end{beamercolorbox}
-		}
-		\put(36,0){%
-			\begin{beamercolorbox}[wd=107.5mm,ht=34mm,sep=1ex]{sectionframelower}
-			\end{beamercolorbox}
-		}
-	\end{overpic}
-\end{frame}
-\debutSectionfalse
+		\begin{overpic}[width=\textwidth]
+			{\HECsectionbgfile}
+			\put(0,42){%
+				\begin{beamercolorbox}[wd=96mm,ht=27.25mm,sep=1ex]{pagetitre}
+					\huge\textbf{\nomsectioncourante}
+				\end{beamercolorbox}
+			}
+			\put(0,35){%
+				\begin{beamercolorbox}[wd=96mm,ht=6mm,sep=1ex]{pagetitre}
+				\end{beamercolorbox}
+			}
+			\put(36,0){%
+				\begin{beamercolorbox}[wd=107.5mm,ht=34mm,sep=1ex]{sectionframelower}
+				\end{beamercolorbox}
+			}
+		\end{overpic}
+	\end{frame}
+	\setboolean{debutSection}{false}
 \addtocounter{framenumber}{-1}
 }
