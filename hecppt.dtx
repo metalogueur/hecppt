@@ -38,13 +38,17 @@
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage{metalogo}
+\usepackage{graphicx}
 \usepackage{hyperref}
 
-\DisableCrossrefs
+
 \CodelineIndex
 \RecordChanges
 \GlossaryPrologue{\section*{Historique des versions}%
 	\addcontentsline{toc}{section}{Historique des versions}}
+
+\setlength{\parskip}{1ex}
+\graphicspath{{img/}}
 
 \definecolor{liens}{rgb}{0,0.35,0.65}
 \definecolor{shadecolor}{rgb}{0.93,0.97,0.99}
@@ -73,6 +77,13 @@
 \newcommand{\non}{\color{red}\faBan}
 \newcommand{\couleur}[1]{%
 	\colorbox{#1}{\makebox[0.9\textwidth]{\color{white} #1}}
+}
+
+\newenvironment{HECattention}{%
+	\begin{leftbar}
+		\noindent{\Large {\color{red}\faExclamationCircle} \textbf{Attention!}} \\
+}{%
+	\end{leftbar}
 }
 
 \newlist{HECcompilation}{itemize}{1}
@@ -155,7 +166,54 @@
 %					\item \textbf{beamerinnerthemeHECMtl.sty}: configuration des éléments
 %						internes des diapositives.
 %				\end{itemize}
+%			\item \textbf{hecppt.cls}: le code source de la classe \hecppt;
+%			\item \textbf{gabarit.tex}: un fichier de base avec lequel vous pourrez travailler.
 %		\end{itemize}
+%
+%		Une fois la classe installée dans votre répertoire de travail, vous êtes prêt à l'utiliser.
+%
+%	\section{Utilisation de la classe}
+%
+%	\subsection{Choix du gabarit}
+%
+% 	\begin{DescribeMacro}{gabarita}
+% 	\end{DescribeMacro}
+% 	\begin{DescribeMacro}{gabaritb}
+% 	\end{DescribeMacro}
+% 	\begin{DescribeMacro}{gabaritc}
+% 	\end{DescribeMacro}
+% 	\begin{DescribeMacro}{gabaritd}
+% 	\end{DescribeMacro}
+% 	\begin{DescribeMacro}{gabarite}
+%		Tel qu'indiqué au début de la présente documentation, la classe \hecppt\ vous offre la
+%		possibilité de choisir entre cinq gabarits différents pour votre présentation. Le choix
+%		du gabarit influence l'aspect visuel de la page titre ainsi que des pages de sections et
+%		de sous-sections. Pour le reste de votre document, l'aspect visuel demeurera le même,
+%		peu importe le gabarit choisi.
+%
+%		Le choix du gabarit se fait à l'intérieur des options de la commande +\documentclass+:
+%
+%		\begin{shaded*}
+%			+\documentclass[aspectratio=1610,...,gabarita,...]{hecppt}+
+%		\end{shaded*}
+%
+%		Choisir un gabarit et le visualiser est aussi simple que de changer l'option, sauvegarder 
+%		le document et le compiler avec +pdflatex+\ldots littéralement. Les figures \ref{ex:gabarita}
+%		(page \pageref{ex:gabarita}) et ... donnent un exemple de chaque page titre pour les cinq
+%		gabarits fournis avec la classe.
+%
+%		\begin{HECattention}
+%			Ne pas choisir de gabarit revient à utiliser la classe \emph{beamer} standard sans
+%			l'image de marque HEC Montréal.
+%		\end{HECattention}
+% 	\end{DescribeMacro}
+%
+%	\begin{figure}
+%		\centering
+%		\includegraphics[height=.9\textheight]{gabarita.png}
+%		\caption{Les différentes pages titres du gabarit A}
+%		\label{ex:gabarita}
+%	\end{figure}
 %
 %
 % \StopEventually{
@@ -414,13 +472,12 @@
 %		les autres environnements sont utilisés pour séparer le contenu d'une
 %		diapositive en deux colonnes.
 %
-%		\begin{leftbar}
-%			\noindent{\Large {\color{red}\faExclamationCircle} \textbf{Attention!}} \\
+%		\begin{HECattention}
 %			À l'intérieur de chacun des environnements internes, une commande +\vspace+
 %			sert à aligner les éléments entre eux à partir de leur «bordure» supérieure.
 %			Il pourrait vous être nécessaire d'ajuster la valeur des +\vspace+ en fonction
 %			du contenu que vous insérez dans ces environnements.
-%		\end{leftbar}
+%		\end{HECattention}
 %
 %    \begin{macrocode}
 
