@@ -373,6 +373,14 @@
 \newcommand*{\nomsectioncourante}{\@currentlabelname}
 \makeatother
 
+\makeatletter
+\patchcmd{\beamer@sectionintoc}
+{\vfill}
+{}
+{}
+{}
+\makeatother
+
 %    \end{macrocode}
 %
 %	\subsection{Environnements internes}
@@ -397,7 +405,7 @@
 
 \newenvironment{HECcomparaison}[1]{%
 	\begin{column}[t]{.5\textwidth}
-		\vspace{-7mm}		
+		\vspace{-2.2mm}		
 		\begin{block}{#1}
 }{%
 		\end{block}
@@ -406,7 +414,7 @@
 
 \newenvironment{HEClegende}[1]{%
 	\begin{column}[t]{.36\textwidth}
-		\vspace{-7mm}
+		\vspace{-2.2mm}
 		\begin{block}{#1}
 }{%
 		\end{block}
@@ -415,7 +423,7 @@
 
 \newenvironment{HECcontenuLegende}{%
 	\begin{column}[t]{.64\textwidth}
-		\vspace{-7mm}
+		\vspace{-2.2mm}
 }{%
 	\end{column}
 }
@@ -465,17 +473,31 @@
 
 %% Beamer Colors
 
+\setbeamercolor{abstract title}{fg=bleuFoncePrimaire}
+\setbeamercolor{alertbox}{fg=white,bg=roseTertiaire}
+\setbeamercolor{alerted text}{fg=white}
+\setbeamercolor{bibliography entry author}{fg=noirPrimaire}
+\setbeamercolor{bibliography entry location}{fg=noirPrimaire}
+\setbeamercolor{bibliography entry note}{fg=noirPrimaire}
+\setbeamercolor{bibliography entry title}{fg=noirPrimaire}
+\setbeamercolor{block body alerted}{fg=noirPrimaire,bg=roseTertiaire!10}
+\setbeamercolor{block body example}{fg=noirPrimaire,bg=turquoiseSecondaire!10}
+\setbeamercolor{block title}{fg=noirPrimaire}
+\setbeamercolor{block title alerted}{fg=white,bg=roseTertiaire}
+\setbeamercolor{block title example}{fg=white,bg=turquoiseSecondaire}
+\setbeamercolor{button}{fg=white,bg=bleuFoncePrimaire}
+\setbeamercolor{button border}{fg=bleuFoncePrimaire}
+\setbeamercolor{caption name}{fg=bleuFoncePrimaire}
+\setbeamercolor{description item}{fg=bleuFoncePrimaire}
 \setbeamercolor{entete}{bg=cyanPrimaire,fg=white}
-\setbeamercolor{sidebar}{bg=white,fg=white}
-\setbeamercolor{navigation symbols}{bg=grisPrimaire,fg=grisPrimaire}
+\setbeamercolor{footline}{bg=white,fg=bleuFoncePrimaire}
+\setbeamercolor{footnote}{fg=bleuFoncePrimaire}
 \setbeamercolor{frametitle}{bg=cyanPrimaire,fg=white}
+\setbeamercolor{item projected}{fg=white,bg=bleuFoncePrimaire}
 \setbeamercolor{itemize item}{fg=bleuFoncePrimaire}
 \setbeamercolor{itemize subitem}{fg=bleuFoncePrimaire}
 \setbeamercolor{itemize subsubitem}{fg=bleuFoncePrimaire}
-\setbeamercolor{item projected}{fg=white,bg=bleuFoncePrimaire}
-\setbeamercolor{subitem projected}{fg=white,bg=bleuFoncePrimaire}
-\setbeamercolor{subsubitem projected}{fg=white,bg=bleuFoncePrimaire}
-\setbeamercolor{description item}{fg=bleuFoncePrimaire}
+\setbeamercolor{navigation symbols}{bg=grisPrimaire,fg=grisPrimaire}
 \ifthenelse{\boolean{gabarita}}{%
 	\setbeamercolor{pagetitre}{bg=cyanPrimaire,fg=bleuFoncePrimaire}
 	\setbeamercolor{pagetitrefoot}{bg=cyanPrimaire,fg=white}
@@ -496,30 +518,20 @@
 	\setbeamercolor{pagetitre}{fg=white,bg=cyanPrimaire}
 	\setbeamercolor{pagetitrefoot}{fg=white,bg=cyanPrimaire}
 }{}
-\setbeamercolor{footline}{bg=white,fg=bleuFoncePrimaire}
 \setbeamercolor{section in toc}{fg=bleuFoncePrimaire}
-\setbeamercolor{sectionframelower}{bg=grisPrimaire}
-\setbeamercolor{block title}{fg=noirPrimaire}
-\setbeamercolor{button}{fg=white,bg=bleuFoncePrimaire}
-\setbeamercolor{button border}{fg=bleuFoncePrimaire}
+\setbeamercolor{sectionframelower}{bg=grisPrimaire,fg=white}
+\setbeamercolor{sidebar}{bg=white,fg=white}
 \setbeamercolor{structure}{fg=bleuFoncePrimaire}
-\setbeamercolor{alerted text}{fg=white}
-\setbeamercolor{alertbox}{fg=white,bg=roseTertiaire}
-\setbeamercolor{block title alerted}{fg=white,bg=roseTertiaire}
-\setbeamercolor{block body alerted}{fg=noirPrimaire,bg=roseTertiaire!10}
-\setbeamercolor{block title example}{fg=white,bg=turquoiseSecondaire}
-\setbeamercolor{block body example}{fg=noirPrimaire,bg=turquoiseSecondaire!10}
-\setbeamercolor{caption name}{fg=bleuFoncePrimaire}
-\setbeamercolor{abstract title}{fg=bleuFoncePrimaire}
-\setbeamercolor{footnote}{fg=bleuFoncePrimaire}
+\setbeamercolor{subitem projected}{fg=white,bg=bleuFoncePrimaire}
+\setbeamercolor{subsubitem projected}{fg=white,bg=bleuFoncePrimaire}
 %</couleurs>
 %<*polices>
 %% HEC Montréal Beamer Font Theme
 
-\setbeamerfont*{block title}{series=\bfseries,family=\rmfamily,shape=\scshape,size=\large}
-\setbeamerfont{alerted text}{series=\bfseries}
-\setbeamerfont{caption name}{series=\bfseries}
 \setbeamerfont{abstract title}{series=\bfseries}
+\setbeamerfont{alerted text}{series=\bfseries}
+\setbeamerfont*{block title}{series=\bfseries,family=\rmfamily,shape=\scshape,size=\large}
+\setbeamerfont{caption name}{series=\bfseries}
 \setbeamerfont{footnote}{size=\tiny}
 %</polices>
 %<*outer>
@@ -566,7 +578,7 @@
 				\huge\textbf{\inserttitle}
 			\end{beamercolorbox}
 		}
-		\put(0,32.4){%
+		\put(0,30.4){%
 			\begin{beamercolorbox}[wd=0.65\textwidth,sep=1ex]{pagetitre}
 				\insertsubtitle
 			\end{beamercolorbox}
@@ -602,14 +614,38 @@
 	\setboolean{debutSection}{false}
 	\addtocounter{framenumber}{-1}
 }
+
+\AtBeginSubsection[]{%
+	\setboolean{debutSection}{true}
+	\begin{frame}
+		\begin{overpic}[width=\textwidth]
+			{\HECsectionbgfile}
+			\put(0,42){%
+				\begin{beamercolorbox}[wd=96mm,ht=27.25mm,sep=1ex]{pagetitre}
+				\end{beamercolorbox}
+			}
+			\put(0,35){%
+				\begin{beamercolorbox}[wd=96mm,ht=6mm,sep=1ex]{pagetitre}
+				\end{beamercolorbox}
+			}
+			\put(36,0){%
+				\begin{beamercolorbox}[wd=107.5mm,ht=34mm,sep=1ex]{sectionframelower}
+					\raggedleft\textbf{\nomsectioncourante}\,
+				\end{beamercolorbox}
+			}
+		\end{overpic}
+	\end{frame}
+	\setboolean{debutSection}{false}
+	\addtocounter{framenumber}{-1}
+}
 %</outer>
 %<*inner>
 \setbeamertemplate{section in toc}{%
-	\colorbox{grisPrimaire}{\makebox[.985\textwidth]{\color{white} \inserttocsection\hfill}}
+	\colorbox{bleuPaleSecondaire!30}{\makebox[.985\textwidth]{\color{bleuFoncePrimaire} \bfseries\inserttocsection\hfill}}
 }
 \setbeamertemplate{subsection in toc}{%
 	\makebox[.05\textwidth]{}%
-	\colorbox{grisPrimaire!20}{\makebox[.935\textwidth]{\inserttocsubsection\hfill}}
+	\colorbox{bleuPaleSecondaire!10}{\makebox[.935\textwidth]{\inserttocsubsection\hfill}}
 }
 \setbeamertemplate{itemize items}[circle]{}
 \setbeamertemplate{enumerate items}[circle]{}
@@ -626,6 +662,17 @@
 %</inner>
 %<*gabarit>
 \documentclass[aspectratio=1610,compress,t,gabarita,english,french]{hecppt}
+
+%% Packages
+\usepackage{hyperref}	% Ce package doit TOUJOURS être en dernier!
+
+%% Options des packages
+\frenchbsetup{og=«,fg=»}
+\hypersetup{colorlinks=true,%
+			urlcolor=bleuFoncePrimaire,%
+			linkcolor=bleuFoncePrimaire,%
+			pdfauthor=Votre Nom,%
+			pdftitle=Titre de la présentation}
 
 %% Métadonnées du document
 
