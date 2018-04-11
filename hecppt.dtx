@@ -198,9 +198,9 @@
 %		\end{shaded*}
 %
 %		Choisir un gabarit et le visualiser est aussi simple que de changer l'option, sauvegarder 
-%		le document et le compiler avec +pdflatex+\ldots littéralement. Les figures \ref{ex:gabarita}
-%		(page \pageref{ex:gabarita}) et ... donnent un exemple de chaque page titre pour les cinq
-%		gabarits fournis avec la classe.
+%		le document et le compiler avec +pdflatex+\ldots\ littéralement. Les figures \ref{ex:gabarita},
+%		\ref{ex:gabaritb}, \ref{ex:gabaritc}, \ref{ex:gabaritd} et \ref{ex:gabarite} donnent un exemple 
+%		de chaque page titre pour les cinq gabarits fournis avec la classe.
 %
 %		\begin{HECattention}
 %			Ne pas choisir de gabarit revient à utiliser la classe \emph{beamer} standard sans
@@ -215,6 +215,182 @@
 %		\label{ex:gabarita}
 %	\end{figure}
 %
+%	\begin{figure}
+%		\centering
+%		\includegraphics[height=.9\textheight]{gabaritb.png}
+%		\caption{Les différentes pages titres du gabarit B}
+%		\label{ex:gabaritb}
+%	\end{figure}
+%
+%	\begin{figure}
+%		\centering
+%		\includegraphics[height=.9\textheight]{gabaritc.png}
+%		\caption{Les différentes pages titres du gabarit C}
+%		\label{ex:gabaritc}
+%	\end{figure}
+%
+%	\begin{figure}
+%		\centering
+%		\includegraphics[height=.9\textheight]{gabaritd.png}
+%		\caption{Les différentes pages titres du gabarit D}
+%		\label{ex:gabaritd}
+%	\end{figure}
+%
+%	\begin{figure}
+%		\centering
+%		\includegraphics[height=.9\textheight]{gabarite.png}
+%		\caption{Les différentes pages titres du gabarit E}
+%		\label{ex:gabarite}
+%	\end{figure}
+%
+%	\subsection{Autres options de la classe \hecppt}
+%
+%	Quelques options sont chargées par défaut avec la commande +\documentclass+ dans
+%	le gabarit fourni avec la classe. Ces options ont leur importance et sont expliquées
+%	ci-dessous.
+%
+%	\begin{DescribeMacro}{aspectratio=1610}
+%		Les gabarits \emph{Powerpoint} fournis par le Studio de design graphique sont
+%		construits au format 16\string:10 et ceux de la présente classe l'ont été dans le
+%		même sens. Il est important de conserver ce ratio, car toutes les mesures de
+%		la classe sont déterminées en fonction de celui-ci.
+%	\end{DescribeMacro}
+%
+%	\begin{DescribeMacro}{compress,t}
+%		Ces deux options proviennent de la classe \emph{beamer}. +compress+ réduit autant
+%		que faire se peut la taille de la barre de navigation des diapositives, située dans
+%		le coin inférieur droit de chaque diapositive, à l'exception des pages titres.
+%		L'espace de présentation valant son pesant d'or, il importe de limiter la taille des
+%		éléments statutaires d'une diapositive.
+%
+%		L'option +t+ est utilisée pour aligner verticalement le contenu de toutes les diapositives
+%		en haut de celles-ci. Tel qu'indiqué dans la documentation de \emph{beamer}\cite[p. 74]{beamer},
+%		vous pouvez outrepasser cette option sur une ou plusieurs diapositives en leur assignant
+%		une autre option.
+%	\end{DescribeMacro}
+%
+%	\subsection{Nouvelles commandes}
+%
+%	La classe \emph{beamer} étant particulièrement étoffée, la raison d'être de la classe \hecppt\ n'en est
+%	qu'une d'esthétisme. C'est pourquoi il n'existe qu'un petit nombre de nouvelles commandes, dont la fonction
+%	est également esthétique.
+%
+%	\begin{DescribeMacro}{\HECauteur}
+%		La commande +\HECauteur+ remplace la commande \LaTeX\ +\author+. Tel qu'indiqué à la
+%		Section \ref{subsec:comminternes}, elle sert à formater le nom de l'auteur dans les gabarits. Comme
+%		la commande originale +\author+, +\HECauteur+ prend deux arguments :
+%
+%		\begin{shaded*}
+%			+\HECauteur{<auteur (forme courte>)}{<auteur (forme longue)>}+
+%		\end{shaded*}
+%
+%		Vous noterez que pour la présente commande, l'argument +auteur (forme courte)+ est
+%		\textbf{obligatoire}, car c'est la forme courte qui est utilisée dans les bas de pages.  
+%	\end{DescribeMacro}
+%
+%	\begin{DescribeMacro}{\pageTitre}
+%		Construire la page titre d'une présentation \emph{beamer} pour qu'elle soit en phase avec
+%		l'image de marque de HEC Montréal est un peu complexe. Pour éviter que du code soit
+%		malencontreusement supprimé ou modifié par l'utilisateur final, l'auteur de la présente
+%		classe a choisi de concentrer tout le codage dans une simple commande, appelée en début
+%		de document.
+%	\end{DescribeMacro}
+%
+%	\subsection{Nouveaux environnements}
+%
+%	Contrairement aux nouvelles commandes, les environnements fournis avec la classe \hecppt\ n'ont
+%	pas qu'un rôle esthétique. Ils servent plutôt à disposer votre contenu dans une diapositive. À
+%	vrai dire, ils servent à imiter le comportement de \emph{Powerpoint}\ldots
+%
+%	\begin{DescribeMacro}{HECimagesstitre}
+%		Cet environnement vous permet d'insérer une image pleine largeur, accompagnée d'un titre,
+%		dans une diapositive. Tel que montré à la Figure \ref{fig:hecimagesstitre}, la taille de
+%		l'image doit avoir un ratio de 3\string:1 pour s'afficher de manière optimale. La syntaxe de
+%		l'environnement est la suivante :
+% \iffalse
+%<*verb>
+% \fi
+\begin{shaded*}
+\begin{verbatim}
+    \begin{HECimagesstitre}{<Titre de l'image>}
+        \includegraphics[<options>]{<nomfichier>}
+    \end{HECimagesstitre}
+\end{verbatim}
+\end{shaded*}
+% \iffalse
+%</verb>
+% \fi
+%
+%	\end{DescribeMacro}
+%
+%	\begin{figure}
+%		\centering
+%		\includegraphics[width=\textwidth]{HECimagesstitre.png}
+%		\caption{Image insérée avec l'environnement \texttt{HECimagesstitre}}
+%		\label{fig:hecimagesstitre}
+%	\end{figure}
+%
+%	\begin{DescribeMacro}{HECcomparaison}
+%		Cet environnement sert à répartir le contenu d'une diapositive sur deux colonnes
+%		d'égale largeur et à démarrer ces dernières par un titre. Pour ce faire, vous devez
+%		créer deux instances successives de +HECcomparaison+ et insérer celles-ci dans un
+%		environnement +columns+. La syntaxe démontrée ci-dessous vous permettra obtenir le
+%		résultat affiché a la Figure \ref{fig:heccomparaison}.
+% \iffalse
+%<*verb>
+% \fi
+\begin{shaded*}
+\begin{verbatim}
+    \begin{columns}
+    
+        \begin{HECcomparaison}{<Titre de la comparaison 1>}
+            contenu...
+        \end{HECcomparaison}
+        
+        \begin{HECcomparaison}{<Titre de la comparaison 2>}
+            contenu...
+        \end{HECcomparaison}
+        
+    \end{columns}
+\end{verbatim}
+\end{shaded*}
+% \iffalse
+%</verb>
+% \fi
+%	\end{DescribeMacro}
+%
+%	\begin{figure}
+%		\centering
+%		\includegraphics[width=\textwidth]{HECcomparaison.png}
+%		\caption{Contenu en deux colonnes égales avec \texttt{HECcomparaison}}
+%		\label{fig:heccomparaison}
+%	\end{figure}
+%
+%	\begin{DescribeMacro}{HEClegende}
+%	\end{DescribeMacro}
+%	\begin{DescribeMacro}{HECcontenuLegende}
+%		Ces deux environnements vont de pair et fonctionne sur le même principe que
+%		+HECcomparaison+ : on crée un environnement +columns+ dans lequel on
+%		insère une instance de +HEClegende+ et de +HECcontenuLegende+.
+%
+%		À la différence de +HECcomparaison+, la répartition du contenu se fait en
+%		deux colonnes prenant respectivement un tier (+HEClegende+) et deux tiers 
+%		(+HECcontenuLegende+) de la diapositive.
+%
+%		L'ordre d'insertion de ces deux environnements est à la discrétion de
+%		l'utilisateur. +HEClegende+ est aussi précédé d'un titre, de la même manière
+%		que +HECcomparaison+.
+%
+%		La syntaxe des environnements décrite ci-dessous vous permettra d'obtenir le
+%		résultat affiché à la Figure \ref{fig:heclegende}.
+%	\end{DescribeMacro}
+%
+%	\begin{figure}
+%		\centering
+%		\includegraphics[width=\textwidth]{HEClegende.png}
+%		\caption{Contenu en deux colonnes avec \texttt{HEClegende} et \texttt{HECcontenuLegende}}
+%		\label{fig:heclegende}
+%	\end{figure}
 %
 % \StopEventually{
 %	\clearpage
@@ -393,6 +569,7 @@
 %    \end{macrocode}
 %
 %	\subsection{Commandes internes}
+%		\label{subsec:comminternes}
 %
 %		Très peu de commandes ont été créées pour \hecppt. Toutes servent à la mise en
 %		forme des diapositives et à minimiser le code dans votre document.
@@ -754,6 +931,7 @@
 	\end{beamercolorbox}
 }
 %</inner>
+% ^^A Code source du gabarit
 %<*gabarit>
 \documentclass[aspectratio=1610,compress,t,gabarita,english,french]{hecppt}
 
