@@ -25,7 +25,7 @@
 \ProvidesFile{hecppt.dtx}
 %</dtx>
 %<class>\NeedsTeXFormat{LaTeX2e}
-%<class>\ProvidesClass{hecppt}[2018/02/14 v0.1 Classe pour des presentations beamer avec l'image de marque HEC Montreal]
+%<class>\ProvidesClass{hecppt}[2018/04/12 v0.1 Classe pour des presentations beamer avec l'image de marque HEC Montreal]
 %<*driver>
 \documentclass[10pt,english,frenchb]{ltxdoc}
 \usepackage[utf8]{inputenc}
@@ -55,6 +55,27 @@
 \definecolor{TFFrameColor}{rgb}{0,0.235,0.443}
 \definecolor{TFTitleColor}{rgb}{1,1,1}
 
+%% Couleurs primaires
+\definecolor{bleuFoncePrimaire}{RGB}{0,60,113}
+\definecolor{cyanPrimaire}{RGB}{0,159,223}
+\definecolor{noirPrimaire}{RGB}{44,42,41}
+\definecolor{grisPrimaire}{RGB}{151,153,155}
+
+%% Couleurs secondaires
+\definecolor{bleuFonceSecondaire}{RGB}{0,94,184}
+\definecolor{bleuPaleSecondaire}{RGB}{65,182,230}
+\definecolor{lilasSecondaire}{RGB}{125,85,199}
+\definecolor{aquaSecondaire}{RGB}{0,193,213}
+\definecolor{turquoiseSecondaire}{RGB}{0,191,179}
+
+%% Couleurs tertiaires
+\definecolor{rougeTertiaire}{RGB}{228,0,43}
+\definecolor{orangeTertiaire}{RGB}{255,130,0}
+\definecolor{jauneTertiaire}{RGB}{255,209,0}
+\definecolor{vertTertiaire}{RGB}{72,162,63}
+\definecolor{mauveTertiaire}{RGB}{173,26,172}
+\definecolor{roseTertiaire}{RGB}{212,15,125}
+
 \hypersetup{
 	colorlinks=true,
 	allcolors=liens,
@@ -76,7 +97,7 @@
 \newcommand{\oui}{\color{green}\faCheck}
 \newcommand{\non}{\color{red}\faBan}
 \newcommand{\couleur}[1]{%
-	\colorbox{#1}{\makebox[0.9\textwidth]{\color{white} #1}}
+	\noindent\colorbox{#1}{\makebox[\textwidth]{\color{white} \textbf{#1}}}
 }
 
 \newenvironment{HECattention}{%
@@ -94,7 +115,7 @@
 \end{document}
 %</driver>
 % \fi
-% \CheckSum{113}
+% \CheckSum{112}
 % \DoNotIndex{\RequirePackage,\ExecuteOptions,\ProcessOptions}
 % \DoNotIndex{\newcommand,\newcommand*,\newenvironment}
 % \DoNotIndex{\hecppt,\oui,\non,\couleur}
@@ -109,7 +130,7 @@
 %		La classe \hecppt\ a été conçue afin de permettre à la communauté HEC Montréal
 %		de pouvoir créer des présentations avec le système de composition de documents
 %		\LaTeX\ et la classe de document \emph{beamer}\cite{beamer} tout en respectant
-%		l'\href{http://marque.hec.ca/}{image de marque} de 	l'université conçue par le 
+%		l'\href{http://marque.hec.ca/}{image de marque}\cite{marque} de l'université conçue par le 
 %		Studio de design graphique. Tout comme les gabarits	\emph{Microsoft Powerpoint}
 %		élaborés par le Studio, cette classe propose cinq gabarits différents à utiliser.
 %	\end{abstract}
@@ -332,7 +353,7 @@
 %
 %	\begin{DescribeMacro}{HECcomparaison}
 %		Cet environnement sert à répartir le contenu d'une diapositive sur deux colonnes
-%		d'égale largeur et à démarrer ces dernières par un titre. Pour ce faire, vous devez
+%		d'égale largeur et à accompagner ces dernières d'un titre. Pour ce faire, vous devez
 %		créer deux instances successives de +HECcomparaison+ et insérer celles-ci dans un
 %		environnement +columns+. La syntaxe démontrée ci-dessous vous permettra obtenir le
 %		résultat affiché a la Figure \ref{fig:heccomparaison}.
@@ -369,7 +390,7 @@
 %	\begin{DescribeMacro}{HEClegende}
 %	\end{DescribeMacro}
 %	\begin{DescribeMacro}{HECcontenuLegende}
-%		Ces deux environnements vont de pair et fonctionne sur le même principe que
+%		Ces deux environnements vont de pair et fonctionnent sur le même principe que
 %		+HECcomparaison+ : on crée un environnement +columns+ dans lequel on
 %		insère une instance de +HEClegende+ et de +HECcontenuLegende+.
 %
@@ -383,6 +404,29 @@
 %
 %		La syntaxe des environnements décrite ci-dessous vous permettra d'obtenir le
 %		résultat affiché à la Figure \ref{fig:heclegende}.
+%
+% \iffalse
+%<*verb>
+% \fi
+\begin{shaded*}
+\begin{verbatim}
+    \begin{columns}
+    
+        \begin{HEClegende}{<Titre de la légende>}
+            légende...
+        \end{HEClegende}
+        
+        \begin{HECcontenuLegende}
+	        contenu...
+        \end{HECcontenuLegende}
+        
+    \end{columns}
+\end{verbatim}
+\end{shaded*}
+% \iffalse
+%</verb>
+% \fi
+%
 %	\end{DescribeMacro}
 %
 %	\begin{figure}
@@ -391,6 +435,65 @@
 %		\caption{Contenu en deux colonnes avec \texttt{HEClegende} et \texttt{HECcontenuLegende}}
 %		\label{fig:heclegende}
 %	\end{figure}
+%
+%	\section{Éléments de la marque HEC Montréal}
+%
+%	Quelques éléments ont été configurés directement dans la classe \hecppt\ afin de respecter
+%	l'image de marque HEC Montréal : la police de caractères et la palette de couleurs.
+%
+%	\subsection{Police de caractères}
+%
+%	Tel qu'indiqué à la page \href{http://marque.hec.ca/normes/typographie/}{Typographie} du site 
+%	de La marque, «la suite Arial est à utiliser dans les présentations Powerpoint».
+%
+%	Afin d'assurer une compatibilité maximale avec le mode mathématique de \LaTeX, \hecppt\ charge
+%	la famille de polices Palatino avec le \emph{package mathpazo}\cite{mathpazo}, qui utilise la police
+%	Palatino Sans, sans empattements, par défaut.
+%
+%	\subsection{Palettes de couleurs}
+%
+%	Les palettes de couleurs complètes de la marque HEC Montréal ont été définies dans \hecppt. Vous pourrez
+%	donc vous en servir en suivant les directives énoncées à la page
+%	\href{http://marque.hec.ca/normes/palette-de-couleur/}{Palettes de couleurs} du site de La marque.
+%
+%	Voici les différentes couleurs et leur rendu telles qu'elles sont définies dans la présente classe.
+%
+%	\subsubsection{Couleurs primaires}
+%	
+%	
+%	\couleur{bleuFoncePrimaire}
+%
+%	\couleur{cyanPrimaire}
+%
+%	\couleur{noirPrimaire}
+%
+%	\couleur{grisPrimaire}
+%
+%	\subsubsection{Couleurs secondaires}
+%
+%	\couleur{bleuFonceSecondaire}
+%
+%	\couleur{bleuPaleSecondaire}
+%
+%	\couleur{lilasSecondaire}
+%
+%	\couleur{aquaSecondaire}
+%
+%	\couleur{turquoiseSecondaire}
+%
+%	\subsubsection{Couleurs tertiaires}
+%
+%	\couleur{rougeTertiaire}
+%
+%	\couleur{orangeTertiaire}
+%
+%	\couleur{jauneTertiaire}
+%
+%	\couleur{vertTertiaire}
+%
+%	\couleur{mauveTertiaire}
+%
+%	\couleur{roseTertiaire}
 %
 % \StopEventually{
 %	\clearpage
@@ -403,6 +506,14 @@
 %			Niepraschk, Rolf (2017).
 %			\emph{Package overpic}, Comprehensive \TeX\ Archive Network. Consulté le 10 avril 2018
 %			à \url{https://ctan.org/pkg/overpic}.
+%		\bibitem{marque}
+%			Studio de design graphique (2018).
+%			\emph{La marque HEC Montréal}, HEC Montréal. Consulté le 12 avril 2018
+%			à \url{http://marque.hec.ca/}.
+%		\bibitem{mathpazo}
+%			Puga, Diego (2002).
+%			Package mathpazo, Comprehensive \TeX\ Archive Network. Consulté le 12 avril 2018
+%			à \url{https://ctan.org/pkg/mathpazo}.
 %	\end{thebibliography}
 % }
 %
@@ -653,7 +764,8 @@
 %			À l'intérieur de chacun des environnements internes, une commande +\vspace+
 %			sert à aligner les éléments entre eux à partir de leur «bordure» supérieure.
 %			Il pourrait vous être nécessaire d'ajuster la valeur des +\vspace+ en fonction
-%			du contenu que vous insérez dans ces environnements.
+%			du contenu que vous insérez dans ces environnements puisque toutes les combinaisons
+%			possibles de contenu n'ont pas été testées.
 %		\end{HECattention}
 %
 %    \begin{macrocode}
@@ -662,7 +774,7 @@
 
 % Environnement pour image pleine page avec titre
 \newenvironment{HECimagesstitre}[1]{%
-	\vspace{-2.2mm}
+	\vspace{-6.5mm}
 	\begin{block}{#1}
 		\begin{figure}
 }{%
@@ -673,7 +785,7 @@
 % Deux colonnes 50/50
 \newenvironment{HECcomparaison}[1]{%
 	\begin{column}[t]{.5\textwidth}
-		\vspace{-2.2mm}		
+		\vspace{-6.5mm}		
 		\begin{block}{#1}
 }{%
 		\end{block}
@@ -684,7 +796,7 @@
 % Colonne 1/3
 \newenvironment{HEClegende}[1]{%
 	\begin{column}[t]{.36\textwidth}
-		\vspace{-2.2mm}
+		\vspace{-6.5mm}
 		\begin{block}{#1}
 }{%
 		\end{block}
@@ -694,7 +806,6 @@
 % Colonne 2/3
 \newenvironment{HECcontenuLegende}{%
 	\begin{column}[t]{.64\textwidth}
-		\vspace{-2.2mm}
 }{%
 	\end{column}
 }
