@@ -19,6 +19,9 @@ hecppt/
 *.sty
 *.zip
 *.cls
+*.gls
+*.ilg
+*.ind
 
 #files to ignore
 gabarit.pdf

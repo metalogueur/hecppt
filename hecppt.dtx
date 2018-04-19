@@ -25,7 +25,7 @@
 \ProvidesFile{hecppt.dtx}
 %</dtx>
 %<class>\NeedsTeXFormat{LaTeX2e}
-%<class>\ProvidesClass{hecppt}[2018/04/12 v0.1 Classe pour des presentations beamer avec l'image de marque HEC Montreal]
+%<class>\ProvidesClass{hecppt}[2018/04/19 v0.1 Classe pour des presentations beamer avec l'image de marque HEC Montreal]
 %<*driver>
 \documentclass[10pt,english,frenchb]{ltxdoc}
 \usepackage[utf8]{inputenc}
@@ -120,7 +120,7 @@
 % \DoNotIndex{\newcommand,\newcommand*,\newenvironment}
 % \DoNotIndex{\hecppt,\oui,\non,\couleur}
 % \DoNotIndex{\LaTeX,\href,\TeX,\clearpage,\bibitem,\url,\emph,\cite,\item,\textbf}
-% \changes{0.1}{2018-02-14}{Première version bêta lancée pour les tests usagers}
+% \changes{0.1}{2018-04-19}{Première version bêta lancée pour les tests usagers}
 % \title{\hecppt : la classe \LaTeX\ pour des présentations avec l'image de marque HEC Montréal}
 % \author{Benoit Hamel, Bibliothèque, HEC Montréal}
 % \date{\today}
@@ -281,8 +281,6 @@
 %		Ces deux options proviennent de la classe \emph{beamer}. +compress+ réduit autant
 %		que faire se peut la taille de la barre de navigation des diapositives, située dans
 %		le coin inférieur droit de chaque diapositive, à l'exception des pages titres.
-%		L'espace de présentation valant son pesant d'or, il importe de limiter la taille des
-%		éléments statutaires d'une diapositive.
 %
 %		L'option +t+ est utilisée pour aligner verticalement le contenu de toutes les diapositives
 %		en haut de celles-ci. Tel qu'indiqué dans la documentation de \emph{beamer}\cite[p. 74]{beamer},
@@ -417,7 +415,7 @@
         \end{HEClegende}
         
         \begin{HECcontenuLegende}
-	        contenu...
+            contenu...
         \end{HECcontenuLegende}
         
     \end{columns}
@@ -446,9 +444,9 @@
 %	Tel qu'indiqué à la page \href{http://marque.hec.ca/normes/typographie/}{Typographie} du site 
 %	de La marque, «la suite Arial est à utiliser dans les présentations Powerpoint».
 %
-%	Afin d'assurer une compatibilité maximale avec le mode mathématique de \LaTeX, \hecppt\ charge
+%	Cependant, afin d'assurer une compatibilité maximale avec le mode mathématique de \LaTeX, \hecppt\ charge
 %	la famille de polices Palatino avec le \emph{package mathpazo}\cite{mathpazo}, qui utilise la police
-%	Palatino Sans, sans empattements, par défaut.
+%	Palatino Sans, sans empattements comme la police Arial, par défaut.
 %
 %	\subsection{Palettes de couleurs}
 %
@@ -515,6 +513,8 @@
 %			Package mathpazo, Comprehensive \TeX\ Archive Network. Consulté le 12 avril 2018
 %			à \url{https://ctan.org/pkg/mathpazo}.
 %	\end{thebibliography}
+%	\clearpage
+%	\PrintChanges
 % }
 %
 % ^^A Début du code source de la classe
