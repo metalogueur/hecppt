@@ -10,7 +10,7 @@ later version.
 
 VERSION
 
-0.1
+0.1.1
 
 *** The rest of this file is in French ***
 

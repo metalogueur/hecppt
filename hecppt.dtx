@@ -1,6 +1,6 @@
 % \iffalse
 %
-% Copyright 2017 HEC Montreal
+% Copyright 2017-2019 HEC Montreal
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3c
@@ -26,7 +26,7 @@
 \ProvidesFile{hecppt.dtx}
 %</dtx>
 %<class>\NeedsTeXFormat{LaTeX2e}
-%<class>\ProvidesClass{hecppt}[2018/04/19 v0.1 Classe pour des presentations beamer avec l'image de marque HEC Montreal]
+%<class>\ProvidesClass{hecppt}[2019/04/24 v0.1.1 Classe pour des presentations beamer avec l'image de marque HEC Montreal]
 %<*driver>
 \documentclass[10pt,english,frenchb]{ltxdoc}
 \usepackage[utf8]{inputenc}
@@ -116,12 +116,14 @@
 \end{document}
 %</driver>
 % \fi
-% \CheckSum{112}
+% \CheckSum{107}
 % \DoNotIndex{\RequirePackage,\ExecuteOptions,\ProcessOptions}
 % \DoNotIndex{\newcommand,\newcommand*,\newenvironment}
 % \DoNotIndex{\hecppt,\oui,\non,\couleur}
 % \DoNotIndex{\LaTeX,\href,\TeX,\clearpage,\bibitem,\url,\emph,\cite,\item,\textbf}
 % \changes{0.1}{2018-04-19}{Première version bêta lancée pour les tests usagers}
+% \changes{0.1.1}{2019-04-24}{Suppression de la commande nomsectioncourante et remplacement
+%	de cette dernière par les commandes secname et subsecname de beamer.}
 % \title{\hecppt : la classe \LaTeX\ pour des présentations avec l'image de marque HEC Montréal}
 % \author{Benoit Hamel, Bibliothèque, HEC Montréal}
 % \date{\today}
@@ -721,18 +723,6 @@
 
 %    \end{macrocode}
 %
-%		La commande +\nomsectioncourante+ n'est pas utilisée dans le \emph{front end} de la classe
-%		\hecppt. Elle sert lors du formatage des pages titre de sections, à l'intérieur de la commande
-%		+\AtBeginSection+, où le titre de la section est placé à l'intérieur du bloc de titre.
-%
-%    \begin{macrocode}
-
-\makeatletter
-\newcommand*{\nomsectioncourante}{\@currentlabelname}
-\makeatother
-
-%    \end{macrocode}
-%
 %		Par défaut, \emph{beamer} insère des commandes +\vfill+ entre chaque élément de la table des
 %		matières d'une présentation afin de la répartir sur l'ensemble d'une diapositive. L'auteur de la
 %		présente classe ne trouvant pas cette option particulièrement esthétique, une correction est
@@ -981,7 +971,7 @@
 			{\HECsectionbgfile}
 			\put(0,42){%
 				\begin{beamercolorbox}[wd=96mm,ht=27.25mm,sep=1ex]{pagetitre}
-					\huge\textbf{\nomsectioncourante}
+					\huge\textbf{\secname}
 				\end{beamercolorbox}
 			}
 			\put(0,35){%
@@ -1005,6 +995,7 @@
 			{\HECsectionbgfile}
 			\put(0,42){%
 				\begin{beamercolorbox}[wd=96mm,ht=27.25mm,sep=1ex]{pagetitre}
+					\huge\textbf{\secname}
 				\end{beamercolorbox}
 			}
 			\put(0,35){%
@@ -1013,7 +1004,7 @@
 			}
 			\put(36,0){%
 				\begin{beamercolorbox}[wd=107.5mm,ht=34mm,sep=1ex]{sectionframelower}
-					\raggedleft\textbf{\nomsectioncourante}\,
+					\raggedleft\textbf{\subsecname}\,
 				\end{beamercolorbox}
 			}
 		\end{overpic}
