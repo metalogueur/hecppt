@@ -26,7 +26,7 @@
 \ProvidesFile{hecppt.dtx}
 %</dtx>
 %<class>\NeedsTeXFormat{LaTeX2e}
-%<class>\ProvidesClass{hecppt}[2019/04/24 v0.1.1 Classe pour des presentations beamer avec l'image de marque HEC Montreal]
+%<class>\ProvidesClass{hecppt}[2019/04/29 v0.2 Classe pour des presentations beamer avec l'image de marque HEC Montreal]
 %<*driver>
 \documentclass[10pt,english,frenchb]{ltxdoc}
 \usepackage[utf8]{inputenc}
@@ -81,7 +81,7 @@
 	colorlinks=true,
 	allcolors=liens,
 	pdftitle={Guide d'utilisation de la classe hecppt},
-	pdfauthor={Benoit Hamel, HEC Montréal}
+	pdfauthor={Benoit Hamel, HEC Montr\'{e}al}
 }
 
 \frenchbsetup{
@@ -116,85 +116,87 @@
 \end{document}
 %</driver>
 % \fi
-% \CheckSum{107}
+% \CheckSum{115}
 % \DoNotIndex{\RequirePackage,\ExecuteOptions,\ProcessOptions}
 % \DoNotIndex{\newcommand,\newcommand*,\newenvironment}
 % \DoNotIndex{\hecppt,\oui,\non,\couleur}
 % \DoNotIndex{\LaTeX,\href,\TeX,\clearpage,\bibitem,\url,\emph,\cite,\item,\textbf}
-% \changes{0.1}{2018-04-19}{Première version bêta lancée pour les tests usagers}
+% \changes{0.1}{2018-04-19}{Premi\`{e}re version b\^{e}ta lanc\'{e}e pour les tests usagers}
 % \changes{0.1.1}{2019-04-24}{Suppression de la commande nomsectioncourante et remplacement
-%	de cette dernière par les commandes secname et subsecname de beamer.}
-% \title{\hecppt : la classe \LaTeX\ pour des présentations avec l'image de marque HEC Montréal}
-% \author{Benoit Hamel, Bibliothèque, HEC Montréal}
+%	de cette derni\`{e}re par les commandes secname et subsecname de beamer.}
+% \changes{0.2}{2019-04-29}{Remplacement de toutes les lettres accentu\'{e}es par les commandes
+% 	LaTeX appropri\'{e}es.}
+% \title{\hecppt : la classe \LaTeX\ pour des pr\'{e}sentations avec l'image de marque HEC Montr\'{e}al}
+% \author{Benoit Hamel, Biblioth\`{e}que, HEC Montr\'{e}al}
 % \date{\today}
 % \maketitle
 %
 %	\begin{abstract}
-%		La classe \hecppt\ a été conçue afin de permettre à la communauté HEC Montréal
-%		de pouvoir créer des présentations avec le système de composition de documents
+%		La classe \hecppt\ a \'{e}t\'{e} con\c{c}ue afin de permettre \`{a} la communaut\'{e} HEC Montr\'{e}al
+%		de pouvoir cr\'{e}er des pr\'{e}sentations avec le syst\`{e}me de composition de documents
 %		\LaTeX\ et la classe de document \emph{beamer}\cite{beamer} tout en respectant
-%		l'\href{http://marque.hec.ca/}{image de marque}\cite{marque} de l'université conçue par le 
+%		l'\href{http://marque.hec.ca/}{image de marque}\cite{marque} de l'universit\'{e} con\c{c}ue par le 
 %		Studio de design graphique. Tout comme les gabarits	\emph{Microsoft Powerpoint}
-%		élaborés par le Studio, cette classe propose cinq gabarits différents à utiliser.
+%		\'{e}labor\'{e}s par le Studio, cette classe propose cinq gabarits diff\'{e}rents \`{a} utiliser.
 %	\end{abstract}
 %
 %	\addtocounter{section}{-1}
-%	\section{Pré-requis}
+%	\section{Pr\'{e}requis}
 %
-%		L'utilisation de la classe \hecppt\ suppose que vous avez au préalable téléchargé
-%		et installé une distribution \TeX\ de même qu'un éditeur de code intégré. Pour la
+%		L'utilisation de la classe \hecppt\ suppose que vous avez au pr\'{e}alable t\'{e}l\'{e}charg\'{e}
+%		et install\'{e} une distribution \TeX\ de m\^{e}me qu'un \'{e}diteur de code int\'{e}gr\'{e}. Pour la
 %		conception de cette classe, la distribution \href{https://www.tug.org/texlive/}{\TeX Live 2017}
-%		et l'éditeur de code \href{https://www.texstudio.org/}{\TeX Studio} ont été utilisés.
+%		et l'\'{e}diteur de code \href{https://www.texstudio.org/}{\TeX Studio} ont \'{e}t\'{e} utilis\'{e}s.
 %
-%		L'utilisation de la classe suppose également que vous avez lu la documentation de
-%		la classe \emph{beamer} de laquelle \hecppt\ est dérivée. La présentation documentation ne vise
-%		qu'à présenter les fonctionnalités de \hecppt\ et non à vous donner une formation sur l'utilisation
+%		L'utilisation de la classe suppose \'{e}galement que vous avez lu la documentation de
+%		la classe \emph{beamer} de laquelle \hecppt\ est d\'{e}riv\'{e}e. La pr\'{e}sente documentation ne vise
+%		qu'\`{a} pr\'{e}senter les fonctionnalit\'{e}s de \hecppt\ et non \`{a} vous donner une formation sur l'utilisation
 %		de \emph{beamer}.
 %
 %	\section{Installation}
 %
-%		L'archive +.zip+ que vous avez téléchargée contient les fichiers suivants:
+%		L'archive +.zip+ que vous avez t\'{e}l\'{e}charg\'{e}e contient les fichiers suivants:
 %
 %		\begin{itemize}
 %			\item \textbf{hecppt.ins}: le fichier d'installation de la classe;
-%			\item \textbf{hecppt.dtx}: le code source documenté de la classe;
+%			\item \textbf{hecppt.dtx}: le code source document\'{e} de la classe;
 %			\item \textbf{hecppt.pdf}: la documentation de la classe;
 %			\item \textbf{README.md}: un fichier README;
-%			\item \textbf{<img/>}: le répertoire d'images nécessaires aux gabarits.
+%			\item \textbf{<img/>}: le r\'{e}pertoire d'images n\'{e}cessaires aux gabarits.
 %		\end{itemize}
 %
-%		Suivez les étapes suivantes pour installer la classe :
+%		Suivez les \'{e}tapes suivantes pour installer la classe :
 %
 %		\begin{enumerate}
-%			\item Créez-vous un répertoire de travail.
-%			\item Décompressez l'archive +.zip+ dans votre répertoire de travail.
-%			\item Ouvrez un éditeur de ligne de commande.
-%			\item Changez de répertoire pour atteindre votre répertoire de travail.
-%			\item Saisissez la commande suivante dans l'éditeur : \\
+%			\item Cr\'{e}ez-vous un r\'{e}pertoire de travail.
+%			\item D\'{e}compressez l'archive +.zip+ dans votre r\'{e}pertoire de travail.
+%			\item Ouvrez un \'{e}diteur de ligne de commande.
+%			\item Changez de r\'{e}pertoire pour atteindre votre r\'{e}pertoire de travail.
+%			\item Saisissez la commande suivante dans l'\'{e}diteur : \\
 %				\begin{shaded*}
 %					+latex hecppt.ins+
 %				\end{shaded*}
 % 		\end{enumerate}
 %
-%		La commande créera une série de fichiers dont vous aurez besoin pour créer
-%		votre présentation:
+%		La commande cr\'{e}era une s\'{e}rie de fichiers dont vous aurez besoin pour cr\'{e}er
+%		votre pr\'{e}sentation:
 %
 %		\begin{itemize}
-%			\item Fichiers du thème \emph{beamer} HEC Montréal:
+%			\item Fichiers du th\`{e}me \emph{beamer} HEC Montr\'{e}al:
 %				\begin{itemize}
-%					\item \textbf{beamerthemeHECMtl.sty}: fichier de base du thème;
+%					\item \textbf{beamerthemeHECMtl.sty}: fichier de base du th\`{e}me;
 %					\item \textbf{beamercolorthemeHECMtl.sty}: palettes de couleurs;
 %					\item \textbf{beamerfontthemeHECMtl.sty}: configuration des polices;
-%					\item \textbf{beamerouterthemeHECMtl.sty}: configuration des entêtes,
+%					\item \textbf{beamerouterthemeHECMtl.sty}: configuration des ent\^{e}tes,
 %						des pieds de pages et des pages titres;
-%					\item \textbf{beamerinnerthemeHECMtl.sty}: configuration des éléments
+%					\item \textbf{beamerinnerthemeHECMtl.sty}: configuration des \'{e}l\'{e}ments
 %						internes des diapositives.
 %				\end{itemize}
 %			\item \textbf{hecppt.cls}: le code source de la classe \hecppt;
 %			\item \textbf{gabarit.tex}: un fichier de base avec lequel vous pourrez travailler.
 %		\end{itemize}
 %
-%		Une fois la classe installée dans votre répertoire de travail, vous êtes prêt à l'utiliser.
+%		Une fois la classe install\'{e}e dans votre r\'{e}pertoire de travail, vous \^{e}tes pr\^{e}t \`{a} l'utiliser.
 %
 %	\section{Utilisation de la classe}
 %
@@ -209,125 +211,125 @@
 % 	\begin{DescribeMacro}{gabaritd}
 % 	\end{DescribeMacro}
 % 	\begin{DescribeMacro}{gabarite}
-%		Tel qu'indiqué au début de la présente documentation, la classe \hecppt\ vous offre la
-%		possibilité de choisir entre cinq gabarits différents pour votre présentation. Le choix
+%		Tel qu'indiqu\'{e} au d\'{e}but de la pr\'{e}sente documentation, la classe \hecppt\ vous offre la
+%		possibilit\'{e} de choisir entre cinq gabarits diff\'{e}rents pour votre pr\'{e}sentation. Le choix
 %		du gabarit influence l'aspect visuel de la page titre ainsi que des pages de sections et
-%		de sous-sections. Pour le reste de votre document, l'aspect visuel demeurera le même,
+%		de sous-sections. Pour le reste de votre document, l'aspect visuel demeurera le m\^{e}me,
 %		peu importe le gabarit choisi.
 %
-%		Le choix du gabarit se fait à l'intérieur des options de la commande +\documentclass+:
+%		Le choix du gabarit se fait \`{a} l'int\'{e}rieur des options de la commande +\documentclass+:
 %
 %		\begin{shaded*}
 %			+\documentclass[aspectratio=1610,...,gabarita,...]{hecppt}+
 %		\end{shaded*}
 %
 %		Choisir un gabarit et le visualiser est aussi simple que de changer l'option, sauvegarder 
-%		le document et le compiler avec +pdflatex+\ldots\ littéralement. Les figures \ref{ex:gabarita},
+%		le document et le compiler avec +pdflatex+\ldots\ litt\'{e}ralement. Les figures \ref{ex:gabarita},
 %		\ref{ex:gabaritb}, \ref{ex:gabaritc}, \ref{ex:gabaritd} et \ref{ex:gabarite} donnent un exemple 
 %		de chaque page titre pour les cinq gabarits fournis avec la classe.
 %
 %		\begin{HECattention}
-%			Ne pas choisir de gabarit revient à utiliser la classe \emph{beamer} standard sans
-%			l'image de marque HEC Montréal.
+%			Ne pas choisir de gabarit revient \`{a} utiliser la classe \emph{beamer} standard sans
+%			l'image de marque HEC Montr\'{e}al.
 %		\end{HECattention}
 % 	\end{DescribeMacro}
 %
 %	\begin{figure}
 %		\centering
 %		\includegraphics[height=.9\textheight]{gabarita.png}
-%		\caption{Les différentes pages titres du gabarit A}
+%		\caption{Les diff\'{e}rentes pages titres du gabarit A}
 %		\label{ex:gabarita}
 %	\end{figure}
 %
 %	\begin{figure}
 %		\centering
 %		\includegraphics[height=.9\textheight]{gabaritb.png}
-%		\caption{Les différentes pages titres du gabarit B}
+%		\caption{Les diff\'{e}rentes pages titres du gabarit B}
 %		\label{ex:gabaritb}
 %	\end{figure}
 %
 %	\begin{figure}
 %		\centering
 %		\includegraphics[height=.9\textheight]{gabaritc.png}
-%		\caption{Les différentes pages titres du gabarit C}
+%		\caption{Les diff\'{e}rentes pages titres du gabarit C}
 %		\label{ex:gabaritc}
 %	\end{figure}
 %
 %	\begin{figure}
 %		\centering
 %		\includegraphics[height=.9\textheight]{gabaritd.png}
-%		\caption{Les différentes pages titres du gabarit D}
+%		\caption{Les diff\'{e}rentes pages titres du gabarit D}
 %		\label{ex:gabaritd}
 %	\end{figure}
 %
 %	\begin{figure}
 %		\centering
 %		\includegraphics[height=.9\textheight]{gabarite.png}
-%		\caption{Les différentes pages titres du gabarit E}
+%		\caption{Les diff\'{e}rentes pages titres du gabarit E}
 %		\label{ex:gabarite}
 %	\end{figure}
 %
 %	\subsection{Autres options de la classe \hecppt}
 %
-%	Quelques options sont chargées par défaut avec la commande +\documentclass+ dans
-%	le gabarit fourni avec la classe. Ces options ont leur importance et sont expliquées
+%	Quelques options sont charg\'{e}es par d\'{e}faut avec la commande +\documentclass+ dans
+%	le gabarit fourni avec la classe. Ces options ont leur importance et sont expliqu\'{e}es
 %	ci-dessous.
 %
 %	\begin{DescribeMacro}{aspectratio=1610}
 %		Les gabarits \emph{Powerpoint} fournis par le Studio de design graphique sont
-%		construits au format 16\string:10 et ceux de la présente classe l'ont été dans le
-%		même sens. Il est important de conserver ce ratio, car toutes les mesures de
-%		la classe sont déterminées en fonction de celui-ci.
+%		construits au format 16\string:10 et ceux de la pr\'{e}sente classe l'ont \'{e}t\'{e} dans le
+%		m\^{e}me sens. Il est important de conserver ce ratio, car toutes les mesures de
+%		la classe sont d\'{e}termin\'{e}es en fonction de celui-ci.
 %	\end{DescribeMacro}
 %
 %	\begin{DescribeMacro}{compress,t}
-%		Ces deux options proviennent de la classe \emph{beamer}. +compress+ réduit autant
-%		que faire se peut la taille de la barre de navigation des diapositives, située dans
-%		le coin inférieur droit de chaque diapositive, à l'exception des pages titres.
+%		Ces deux options proviennent de la classe \emph{beamer}. +compress+ r\'{e}duit autant
+%		que faire se peut la taille de la barre de navigation des diapositives, situ\'{e}e dans
+%		le coin inf\'{e}rieur droit de chaque diapositive, \`{a} l'exception des pages titres.
 %
-%		L'option +t+ est utilisée pour aligner verticalement le contenu de toutes les diapositives
-%		en haut de celles-ci. Tel qu'indiqué dans la documentation de \emph{beamer}\cite[p. 74]{beamer},
+%		L'option +t+ est utilis\'{e}e pour aligner verticalement le contenu de toutes les diapositives
+%		en haut de celles-ci. Tel qu'indiqu\'{e} dans la documentation de \emph{beamer}\cite[p. 74]{beamer},
 %		vous pouvez outrepasser cette option sur une ou plusieurs diapositives en leur assignant
 %		une autre option.
 %	\end{DescribeMacro}
 %
 %	\subsection{Nouvelles commandes}
 %
-%	La classe \emph{beamer} étant particulièrement étoffée, la raison d'être de la classe \hecppt\ n'en est
-%	qu'une d'esthétisme. C'est pourquoi il n'existe qu'un petit nombre de nouvelles commandes, dont la fonction
-%	est également esthétique.
+%	La classe \emph{beamer} \'{e}tant particuli\`{e}rement \'{e}toff\'{e}e, la raison d'\^{e}tre de la classe \hecppt\ n'en est
+%	qu'une d'esth\'{e}tisme. C'est pourquoi il n'existe qu'un petit nombre de nouvelles commandes, dont la fonction
+%	est \'{e}galement esth\'{e}tique.
 %
 %	\begin{DescribeMacro}{\HECauteur}
-%		La commande +\HECauteur+ remplace la commande \LaTeX\ +\author+. Tel qu'indiqué à la
-%		Section \ref{subsec:comminternes}, elle sert à formater le nom de l'auteur dans les gabarits. Comme
+%		La commande +\HECauteur+ remplace la commande \LaTeX\ +\author+. Tel qu'indiqu\'{e} \`{a} la
+%		Section \ref{subsec:comminternes}, elle sert \`{a} formater le nom de l'auteur dans les gabarits. Comme
 %		la commande originale +\author+, +\HECauteur+ prend deux arguments :
 %
 %		\begin{shaded*}
 %			+\HECauteur{<auteur (forme courte>)}{<auteur (forme longue)>}+
 %		\end{shaded*}
 %
-%		Vous noterez que pour la présente commande, l'argument +auteur (forme courte)+ est
-%		\textbf{obligatoire}, car c'est la forme courte qui est utilisée dans les bas de pages.  
+%		Vous noterez que pour la pr\'{e}sente commande, l'argument +auteur (forme courte)+ est
+%		\textbf{obligatoire}, car c'est la forme courte qui est utilis\'{e}e dans les bas de pages.  
 %	\end{DescribeMacro}
 %
 %	\begin{DescribeMacro}{\pageTitre}
-%		Construire la page titre d'une présentation \emph{beamer} pour qu'elle soit en phase avec
-%		l'image de marque de HEC Montréal est un peu complexe. Pour éviter que du code soit
-%		malencontreusement supprimé ou modifié par l'utilisateur final, l'auteur de la présente
-%		classe a choisi de concentrer tout le codage dans une simple commande, appelée en début
+%		Construire la page titre d'une pr\'{e}sentation \emph{beamer} pour qu'elle soit en phase avec
+%		l'image de marque de HEC Montr\'{e}al est un peu complexe. Pour \'{e}viter que du code soit
+%		malencontreusement supprim\'{e} ou modifi\'{e} par l'utilisateur final, l'auteur de la pr\'{e}sente
+%		classe a choisi de concentrer tout le codage dans une simple commande, appel\'{e}e en d\'{e}but
 %		de document.
 %	\end{DescribeMacro}
 %
 %	\subsection{Nouveaux environnements}
 %
 %	Contrairement aux nouvelles commandes, les environnements fournis avec la classe \hecppt\ n'ont
-%	pas qu'un rôle esthétique. Ils servent plutôt à disposer votre contenu dans une diapositive. À
-%	vrai dire, ils servent à imiter le comportement de \emph{Powerpoint}\ldots
+%	pas qu'un r\^{o}le esth\'{e}tique. Ils servent plut\^{o}t \`{a} disposer votre contenu dans une diapositive. \`{a}
+%	vrai dire, ils servent \`{a} imiter le comportement de \emph{Powerpoint}\ldots
 %
 %	\begin{DescribeMacro}{HECimagesstitre}
-%		Cet environnement vous permet d'insérer une image pleine largeur, accompagnée d'un titre,
-%		dans une diapositive. Tel que montré à la Figure \ref{fig:hecimagesstitre}, la taille de
-%		l'image doit avoir un ratio de 3\string:1 pour s'afficher de manière optimale. La syntaxe de
+%		Cet environnement vous permet d'ins\'{e}rer une image pleine largeur, accompagn\'{e}e d'un titre,
+%		dans une diapositive. Tel que montr\'{e} \`{a} la Figure \ref{fig:hecimagesstitre}, la taille de
+%		l'image doit avoir un ratio de 3\string:1 pour s'afficher de mani\`{e}re optimale. La syntaxe de
 %		l'environnement est la suivante :
 % \iffalse
 %<*verb>
@@ -348,16 +350,16 @@
 %	\begin{figure}
 %		\centering
 %		\includegraphics[width=\textwidth]{HECimagesstitre.png}
-%		\caption{Image insérée avec l'environnement \texttt{HECimagesstitre}}
+%		\caption{Image ins\'{e}r\'{e}e avec l'environnement \texttt{HECimagesstitre}}
 %		\label{fig:hecimagesstitre}
 %	\end{figure}
 %
 %	\begin{DescribeMacro}{HECcomparaison}
-%		Cet environnement sert à répartir le contenu d'une diapositive sur deux colonnes
-%		d'égale largeur et à accompagner ces dernières d'un titre. Pour ce faire, vous devez
-%		créer deux instances successives de +HECcomparaison+ et insérer celles-ci dans un
-%		environnement +columns+. La syntaxe démontrée ci-dessous vous permettra obtenir le
-%		résultat affiché a la Figure \ref{fig:heccomparaison}.
+%		Cet environnement sert \`{a} r\'{e}partir le contenu d'une diapositive sur deux colonnes
+%		d'\'{e}gale largeur et \`{a} accompagner ces derni\`{e}res d'un titre. Pour ce faire, vous devez
+%		cr\'{e}er deux instances successives de +HECcomparaison+ et ins\'{e}rer celles-ci dans un
+%		environnement +columns+. La syntaxe d\'{e}montr\'{e}e ci-dessous vous permettra obtenir le
+%		r\'{e}sultat affich\'{e} a la Figure \ref{fig:heccomparaison}.
 % \iffalse
 %<*verb>
 % \fi
@@ -384,27 +386,27 @@
 %	\begin{figure}
 %		\centering
 %		\includegraphics[width=\textwidth]{HECcomparaison.png}
-%		\caption{Contenu en deux colonnes égales avec \texttt{HECcomparaison}}
+%		\caption{Contenu en deux colonnes \'{e}gales avec \texttt{HECcomparaison}}
 %		\label{fig:heccomparaison}
 %	\end{figure}
 %
 %	\begin{DescribeMacro}{HEClegende}
 %	\end{DescribeMacro}
 %	\begin{DescribeMacro}{HECcontenuLegende}
-%		Ces deux environnements vont de pair et fonctionnent sur le même principe que
-%		+HECcomparaison+ : on crée un environnement +columns+ dans lequel on
-%		insère une instance de +HEClegende+ et de +HECcontenuLegende+.
+%		Ces deux environnements vont de pair et fonctionnent sur le m\^{e}me principe que
+%		+HECcomparaison+ : on cr\'{e}e un environnement +columns+ dans lequel on
+%		ins\`{e}re une instance de +HEClegende+ et de +HECcontenuLegende+.
 %
-%		À la différence de +HECcomparaison+, la répartition du contenu se fait en
+%		\`{a} la diff\'{e}rence de +HECcomparaison+, la r\'{e}partition du contenu se fait en
 %		deux colonnes prenant respectivement un tier (+HEClegende+) et deux tiers 
 %		(+HECcontenuLegende+) de la diapositive.
 %
-%		L'ordre d'insertion de ces deux environnements est à la discrétion de
-%		l'utilisateur. +HEClegende+ est aussi précédé d'un titre, de la même manière
+%		L'ordre d'insertion de ces deux environnements est \`{a} la discr\'{e}tion de
+%		l'utilisateur. +HEClegende+ est aussi pr\'{e}c\'{e}d\'{e} d'un titre, de la m\^{e}me mani\`{e}re
 %		que +HECcomparaison+.
 %
-%		La syntaxe des environnements décrite ci-dessous vous permettra d'obtenir le
-%		résultat affiché à la Figure \ref{fig:heclegende}.
+%		La syntaxe des environnements d\'{e}crite ci-dessous vous permettra d'obtenir le
+%		r\'{e}sultat affich\'{e} \`{a} la Figure \ref{fig:heclegende}.
 %
 % \iffalse
 %<*verb>
@@ -413,8 +415,8 @@
 \begin{verbatim}
     \begin{columns}
     
-        \begin{HEClegende}{<Titre de la légende>}
-            légende...
+        \begin{HEClegende}{<Titre de la l\'{e}gende>}
+            l\'{e}gende...
         \end{HEClegende}
         
         \begin{HECcontenuLegende}
@@ -437,27 +439,27 @@
 %		\label{fig:heclegende}
 %	\end{figure}
 %
-%	\section{Éléments de la marque HEC Montréal}
+%	\section{\'{E}l\'{e}ments de la marque HEC Montr\'{e}al}
 %
-%	Quelques éléments ont été configurés directement dans la classe \hecppt\ afin de respecter
-%	l'image de marque HEC Montréal : la police de caractères et la palette de couleurs.
+%	Quelques \'{e}l\'{e}ments ont \'{e}t\'{e} configur\'{e}s directement dans la classe \hecppt\ afin de respecter
+%	l'image de marque HEC Montr\'{e}al : la police de caract\`{e}res et la palette de couleurs.
 %
-%	\subsection{Police de caractères}
+%	\subsection{Police de caract\`{e}res}
 %
-%	Tel qu'indiqué à la page \href{http://marque.hec.ca/normes/typographie/}{Typographie} du site 
-%	de La marque, «la suite Arial est à utiliser dans les présentations Powerpoint».
+%	Tel qu'indiqu\'{e} \`{a} la page \href{http://marque.hec.ca/normes/typographie/}{Typographie} du site 
+%	de La marque, «la suite Arial est \`{a} utiliser dans les pr\'{e}sentations Powerpoint».
 %
-%	Cependant, afin d'assurer une compatibilité maximale avec le mode mathématique de \LaTeX, \hecppt\ charge
+%	Cependant, afin d'assurer une compatibilit\'{e} maximale avec le mode math\'{e}matique de \LaTeX, \hecppt\ charge
 %	la famille de polices Palatino avec le \emph{package mathpazo}\cite{mathpazo}, qui utilise la police
-%	Palatino Sans, sans empattements comme la police Arial, par défaut.
+%	Palatino Sans, sans empattements comme la police Arial, par d\'{e}faut.
 %
 %	\subsection{Palettes de couleurs}
 %
-%	Les palettes de couleurs complètes de la marque HEC Montréal ont été définies dans \hecppt. Vous pourrez
-%	donc vous en servir en suivant les directives énoncées à la page
+%	Les palettes de couleurs compl\`{e}tes de la marque HEC Montr\'{e}al ont \'{e}t\'{e} d\'{e}finies dans \hecppt. Vous pourrez
+%	donc vous en servir en suivant les directives \'{e}nonc\'{e}es \`{a} la page
 %	\href{http://marque.hec.ca/normes/palette-de-couleur/}{Palettes de couleurs} du site de La marque.
 %
-%	Voici les différentes couleurs et leur rendu telles qu'elles sont définies dans la présente classe.
+%	Voici les diff\'{e}rentes couleurs et leur rendu telles qu'elles sont d\'{e}finies dans la pr\'{e}sente classe.
 %
 %	\subsubsection{Couleurs primaires}
 %	
@@ -501,52 +503,52 @@
 %	\begin{thebibliography}{99}
 %		\bibitem{beamer}
 %			Tantau, Till, Vedran Mileti\'{c} et Joseph Wright (2017).
-%			\emph{Package beamer}, Comprehensive \TeX\ Archive Network. Consulté le 14 février 2018
-%			à \url{https://ctan.org/pkg/beamer}.
+%			\emph{Package beamer}, Comprehensive \TeX\ Archive Network. Consult\'{e} le 14 f\'{e}vrier 2018
+%			\`{a} \url{https://ctan.org/pkg/beamer}.
 %		\bibitem{overpic}
 %			Niepraschk, Rolf (2017).
-%			\emph{Package overpic}, Comprehensive \TeX\ Archive Network. Consulté le 10 avril 2018
-%			à \url{https://ctan.org/pkg/overpic}.
+%			\emph{Package overpic}, Comprehensive \TeX\ Archive Network. Consult\'{e} le 10 avril 2018
+%			\`{a} \url{https://ctan.org/pkg/overpic}.
 %		\bibitem{marque}
 %			Studio de design graphique (2018).
-%			\emph{La marque HEC Montréal}, HEC Montréal. Consulté le 12 avril 2018
-%			à \url{http://marque.hec.ca/}.
+%			\emph{La marque HEC Montr\'{e}al}, HEC Montr\'{e}al. Consult\'{e} le 12 avril 2018
+%			\`{a} \url{http://marque.hec.ca/}.
 %		\bibitem{mathpazo}
 %			Puga, Diego (2002).
-%			Package mathpazo, Comprehensive \TeX\ Archive Network. Consulté le 12 avril 2018
-%			à \url{https://ctan.org/pkg/mathpazo}.
+%			Package mathpazo, Comprehensive \TeX\ Archive Network. Consult\'{e} le 12 avril 2018
+%			\`{a} \url{https://ctan.org/pkg/mathpazo}.
 %	\end{thebibliography}
 %	\clearpage
 %	\PrintChanges
 % }
 %
-% ^^A Début du code source de la classe
+% ^^A D\'{e}but du code source de la classe
 %
 % \appendix
 %
 %	\section{Code source de la classe}
 %
 %		Dans cette section, vous trouverez le code source de la classe \hecppt. Si vous voulez
-%		comprendre comment elle est programmée, aider à la déboguer, etc., cette section est pour
+%		comprendre comment elle est programm\'{e}e, aider \`{a} la d\'{e}boguer, etc., cette section est pour
 %		vous.
 %
-%	\subsection{Valeurs booléennes}
+%	\subsection{Valeurs bool\'{e}ennes}
 %
-%		Le booléen +debutSection+ sert lors du formatage du pied de page des diapositives. Si on est
-%		en début de section ou de sous-section, \hecppt\ va générer une page titre de section. 
-%		À l'intérieur du \emph{beamer template} +footline+, +debutSection+ désactive l'affichage du numéro de
+%		Le bool\'{e}en +debutSection+ sert lors du formatage du pied de page des diapositives. Si on est
+%		en d\'{e}but de section ou de sous-section, \hecppt\ va g\'{e}n\'{e}rer une page titre de section. 
+%		\`{A} l'int\'{e}rieur du \emph{beamer template} +footline+, +debutSection+ d\'{e}sactive l'affichage du num\'{e}ro de
 %		diapositive.
 %
-%		Les booléens +gabarit[x]+ servent à déterminer les fichiers d'images de fond ainsi que les
-%		palettes de couleurs qui seront utilisés dans les pages titres. Par défaut, ces booléens
-%		sont initialisés à +false+ et sont modifiés à +true+ en fonction de l'option de classe
+%		Les bool\'{e}ens +gabarit[x]+ servent \`{a} d\'{e}terminer les fichiers d'images de fond ainsi que les
+%		palettes de couleurs qui seront utilis\'{e}s dans les pages titres. Par d\'{e}faut, ces bool\'{e}ens
+%		sont initialis\'{e}s \`{a} +false+ et sont modifi\'{e}s \`{a} +true+ en fonction de l'option de classe
 %		choisie.
 %
 %    \begin{macrocode}
 %<*class>
 \RequirePackage{ifthen}
 
-% Valeurs booléennes
+% Valeurs bool\'{e}ennes
 \newboolean{debutSection}
 \newboolean{gabarita}
 \newboolean{gabaritb}
@@ -554,7 +556,7 @@
 \newboolean{gabaritd}
 \newboolean{gabarite}
 
-% Valeurs par défaut
+% Valeurs par d\'{e}faut
 \setboolean{gabarita}{false}
 \setboolean{gabaritb}{false}
 \setboolean{gabaritc}{false}
@@ -565,13 +567,13 @@
 %
 %	\subsection{Options de la classe}
 %
-%		Les seules options de \hecppt\ concernent le gabarit à utiliser. À l'intérieur
+%		Les seules options de \hecppt\ concernent le gabarit \`{a} utiliser. \`{A} l'int\'{e}rieur
 %		de chacune des options, on initialise les nom de fichiers d'images de fond
-%		à utiliser dans les pages titres et on change la valeur du booléen de gabarit
-%		correspondant à +true+.
+%		\`{a} utiliser dans les pages titres et on change la valeur du bool\'{e}en de gabarit
+%		correspondant \`{a} +true+.
 %
 %		Les commandes +\HECbgfile+ et +\HECsectionbgfile+ servent de conteneurs pour
-%		les noms de fichiers. Ces commandes sont utilisées dans le
+%		les noms de fichiers. Ces commandes sont utilis\'{e}es dans le
 %		\emph{beamer template} +title page+ et les commandes +\AtBeginSection+ et 
 %		+\AtBeginSubsection+ respectivement.
 %
@@ -581,7 +583,7 @@
 \newcommand{\HECbgfile}{}
 \newcommand{\HECsectionbgfile}{}
 
-% Déclaration des options de la classe
+% D\'{e}claration des options de la classe
 \DeclareOption{gabarita}{%
 	\renewcommand{\HECbgfile}{background-a.eps}
 	\renewcommand{\HECsectionbgfile}{section-background-a.eps}
@@ -612,11 +614,11 @@
 %
 %	\subsection{Chargement de la classe}
 %
-%		\hecppt\ est chargée avec les options saisies par l'utilisateur
+%		\hecppt\ est charg\'{e}e avec les options saisies par l'utilisateur
 %		et charge la classe \emph{beamer} avec les options correspondantes.
 %
-%		Le mode +presentation+ est ensuite activé, de même que le thème
-%		HEC Montréal.
+%		Le mode +presentation+ est ensuite activ\'{e}, de m\^{e}me que le th\`{e}me
+%		HEC Montr\'{e}al.
 %
 %    \begin{macrocode}
 
@@ -626,7 +628,7 @@
 \ProcessOptions
 \LoadClass{beamer}
 
-% Mode et thème beamer
+% Mode et th\`{e}me beamer
 \mode<presentation>
 \usetheme{HECMtl}
 
@@ -634,16 +636,16 @@
 %
 %	\subsection{\emph{Packages} requis}
 %
-%		La classe \hecppt\ requiert très peu de \emph{packages} par défaut.
-%		La classe \emph{beamer} en charge déjà une panoplie, et ceux chargés
-%		avec \hecppt\ ne servent qu'à gérer l'image de marque HEC Montréal et
-%		à accommoder les utilisateurs francophones (ou de toute autre langue
-%		nécessitant des caractères accentués).
+%		La classe \hecppt\ requiert tr\`{e}s peu de \emph{packages} par d\'{e}faut.
+%		La classe \emph{beamer} en charge d\'{e}j\`{a} une panoplie, et ceux charg\'{e}s
+%		avec \hecppt\ ne servent qu'\`{a} g\'{e}rer l'image de marque HEC Montr\'{e}al et
+%		\`{a} accommoder les utilisateurs francophones (ou de toute autre langue
+%		n\'{e}cessitant des caract\`{e}res accentu\'{e}s).
 %
-%		Les gabarits \emph{Microsoft Powerpoint} originaux élaborés par le Studio
-%		de design graphique sont livrés par défaut avec une police sans empattements.
-%		\hecppt\ utilise donc la police de caractères Palatino pour refléter le
-%		même style.
+%		Les gabarits \emph{Microsoft Powerpoint} originaux \'{e}labor\'{e}s par le Studio
+%		de design graphique sont livr\'{e}s par d\'{e}faut avec une police sans empattements.
+%		\hecppt\ utilise donc la police de caract\`{e}res Palatino pour refl\'{e}ter le
+%		m\^{e}me style.
 %
 %    \begin{macrocode}
 
@@ -652,27 +654,27 @@
 \RequirePackage[T1]{fontenc}		% Utilisation des polices T1
 \RequirePackage{xcolor}				% Gestion des couleurs
 \RequirePackage{graphicx}			% Gestion des images
-\RequirePackage[abs]{overpic}		% Découpage des pages titres en blocs
+\RequirePackage[abs]{overpic}		% D\'{e}coupage des pages titres en blocs
 \RequirePackage{babel}				% Support multilingue
 \RequirePackage{amsmath}			% Package obligatoire pour les maths
 \RequirePackage{mathpazo}			% Utilisation de la police Palatino
-\RequirePackage[overload]{textcase}	% Gestion des casses de caractères
-\RequirePackage{nameref}			% Référencement des sections par le nom
+\RequirePackage[overload]{textcase}	% Gestion des casses de caract\`{e}res
+\RequirePackage{nameref}			% R\'{e}f\'{e}rencement des sections par le nom
 
 %    \end{macrocode}
 %
 %	\subsection{Options pour le \emph{package overpic}}
 %
-%		Le \emph{package overpic}\cite{overpic} est utilisé pour mettre en forme les pages titres
-%		d'une présentation et des sections. Il permet de juxtaposer images, couleurs,
-%		texte et commandes \LaTeX\ à l'intérieur d'une grille prédéfinie. Afin que le
-%		\emph{package} fonctionne correctement, il faut déterminer l'emplacement des
-%		images (commande +\graphicspath+), de même que la valeur par défaut de la grille 
+%		Le \emph{package overpic}\cite{overpic} est utilis\'{e} pour mettre en forme les pages titres
+%		d'une pr\'{e}sentation et des sections. Il permet de juxtaposer images, couleurs,
+%		texte et commandes \LaTeX\ \`{a} l'int\'{e}rieur d'une grille pr\'{e}d\'{e}finie. Afin que le
+%		\emph{package} fonctionne correctement, il faut d\'{e}terminer l'emplacement des
+%		images (commande +\graphicspath+), de m\^{e}me que la valeur par d\'{e}faut de la grille 
 %		(commande +\unitlength+).
 %
-%		Étant donné que la commande +\graphicspath+ est	utilisée pour l'ensemble des 
-%		images incluses dans une présentation, {\bfseries vous devrez placer vos propres images 
-%		dans le même répertoire}, soit +img/+.
+%		\'{E}tant donn\'{e} que la commande +\graphicspath+ est	utilis\'{e}e pour l'ensemble des 
+%		images incluses dans une pr\'{e}sentation, {\bfseries vous devrez placer vos propres images 
+%		dans le m\^{e}me r\'{e}pertoire}, soit +img/+.
 %
 %    \begin{macrocode}
 
@@ -685,14 +687,14 @@
 %	\subsection{Commandes internes}
 %		\label{subsec:comminternes}
 %
-%		Très peu de commandes ont été créées pour \hecppt. Toutes servent à la mise en
-%		forme des diapositives et à minimiser le code dans votre document.
+%		Tr\`{e}s peu de commandes ont \'{e}t\'{e} cr\'{e}\'{e}es pour \hecppt. Toutes servent \`{a} la mise en
+%		forme des diapositives et \`{a} minimiser le code dans votre document.
 %
-%		+\HECauteur+ a été créée afin de formater le nom de l'auteur dans le pied de page
+%		+\HECauteur+ a \'{e}t\'{e} cr\'{e}\'{e}e afin de formater le nom de l'auteur dans le pied de page
 %		des diapositives. Le premier argument est la version courte du nom de l'auteur, que
-%		la commande transforme en lettres capitales. Cette version est utilisée dans le pied
-%		de page des diapositives grâce à la commande +\insertshortauthor+. Le deuxième argument
-%		de +\HECauteur+ est la version longue du nom de l'auteur, qui est utilisée ailleurs
+%		la commande transforme en lettres capitales. Cette version est utilis\'{e}e dans le pied
+%		de page des diapositives gr\^{a}ce \`{a} la commande +\insertshortauthor+. Le deuxi\`{e}me argument
+%		de +\HECauteur+ est la version longue du nom de l'auteur, qui est utilis\'{e}e ailleurs
 %		dans le document.
 %
 %    \begin{macrocode}	
@@ -704,9 +706,9 @@
 
 %    \end{macrocode}
 %
-%		La commande +\pageTitre+ sert à insérer la page titre de la présentation. Elle efface
-%		le pied de page, en conformité avec les gabarits \emph{Microsoft Powerpoint} élaborés
-%		par le Studio de design graphique et retire la page titre du décompte de
+%		La commande +\pageTitre+ sert \`{a} ins\'{e}rer la page titre de la pr\'{e}sentation. Elle efface
+%		le pied de page, en conformit\'{e} avec les gabarits \emph{Microsoft Powerpoint} \'{e}labor\'{e}s
+%		par le Studio de design graphique et retire la page titre du d\'{e}compte de
 %		diapositives.
 %
 %    \begin{macrocode}
@@ -723,11 +725,11 @@
 
 %    \end{macrocode}
 %
-%		Par défaut, \emph{beamer} insère des commandes +\vfill+ entre chaque élément de la table des
-%		matières d'une présentation afin de la répartir sur l'ensemble d'une diapositive. L'auteur de la
-%		présente classe ne trouvant pas cette option particulièrement esthétique, une correction est
-%		apportée à la commande interne +\beamer@sectionintoc+ afin que les éléments de la table des matières
-%		soient regroupés.
+%		Par d\'{e}faut, \emph{beamer} ins\`{e}re des commandes +\vfill+ entre chaque \'{e}l\'{e}ment de la table des
+%		mati\`{e}res d'une pr\'{e}sentation afin de la r\'{e}partir sur l'ensemble d'une diapositive. L'auteur de la
+%		pr\'{e}sente classe ne trouvant pas cette option particuli\`{e}rement esth\'{e}tique, une correction est
+%		apport\'{e}e \`{a} la commande interne +\beamer@sectionintoc+ afin que les \'{e}l\'{e}ments de la table des mati\`{e}res
+%		soient regroup\'{e}s.
 %
 %    \begin{macrocode}
 
@@ -744,19 +746,19 @@
 %	\subsection{Environnements internes}
 %
 %		Tous les environnements de la classe existent pour uniformiser la mise en page
-%		des diapositives et le positionnement de leurs éléments dans l'espace. La classe
-%		\emph{beamer} positionne les +blocks+ et les +columns+ différement. Les
-%		environnements de \hecppt\ font en sorte que la ligne de base des éléments 
-%		(\emph{baseline}) est la même. Mis à part l'environnement +HECimagesstitre+, tous
-%		les autres environnements sont utilisés pour séparer le contenu d'une
+%		des diapositives et le positionnement de leurs \'{e}l\'{e}ments dans l'espace. La classe
+%		\emph{beamer} positionne les +blocks+ et les +columns+ diff\'{e}rement. Les
+%		environnements de \hecppt\ font en sorte que la ligne de base des \'{e}l\'{e}ments 
+%		(\emph{baseline}) est la m\^{e}me. Mis \`{a} part l'environnement +HECimagesstitre+, tous
+%		les autres environnements sont utilis\'{e}s pour s\'{e}parer le contenu d'une
 %		diapositive en deux colonnes.
 %
 %		\begin{HECattention}
-%			À l'intérieur de chacun des environnements internes, une commande +\vspace+
-%			sert à aligner les éléments entre eux à partir de leur «bordure» supérieure.
-%			Il pourrait vous être nécessaire d'ajuster la valeur des +\vspace+ en fonction
-%			du contenu que vous insérez dans ces environnements puisque toutes les combinaisons
-%			possibles de contenu n'ont pas été testées.
+%			\`{A} l'int\'{e}rieur de chacun des environnements internes, une commande +\vspace+
+%			sert \`{a} aligner les \'{e}l\'{e}ments entre eux \`{a} partir de leur «bordure» sup\'{e}rieure.
+%			Il pourrait vous \^{e}tre n\'{e}cessaire d'ajuster la valeur des +\vspace+ en fonction
+%			du contenu que vous ins\'{e}rez dans ces environnements puisque toutes les combinaisons
+%			possibles de contenu n'ont pas \'{e}t\'{e} test\'{e}es.
 %		\end{HECattention}
 %
 %    \begin{macrocode}
@@ -809,7 +811,7 @@
 % \iffalse
 % ^^A Code source des fichiers .sty
 %<*theme>
-%% HEC Montréal Beamer Theme
+%% HEC Montr\'{e}al Beamer Theme
 
 \mode<presentation>
 
@@ -819,7 +821,7 @@
 \useinnertheme{HECMtl}
 %</theme>
 %<*couleurs>
-%% HEC Montréal Beamer Color Theme
+%% HEC Montr\'{e}al Beamer Color Theme
 
 %% Color Palettes
 
@@ -899,7 +901,7 @@
 \setbeamercolor{subsubitem projected}{fg=white,bg=bleuFoncePrimaire}
 %</couleurs>
 %<*polices>
-%% HEC Montréal Beamer Font Theme
+%% HEC Montr\'{e}al Beamer Font Theme
 
 \setbeamerfont{abstract title}{series=\bfseries}
 \setbeamerfont{alerted text}{series=\bfseries}
@@ -908,7 +910,7 @@
 \setbeamerfont{footnote}{size=\tiny}
 %</polices>
 %<*outer>
-%% HEC Montréal Beamer Outer Theme
+%% HEC Montr\'{e}al Beamer Outer Theme
 
 %% Beamer Sizes
 
@@ -1039,7 +1041,7 @@
 \documentclass[aspectratio=1610,compress,t,gabarita,english,french]{hecppt}
 
 %% Packages
-\usepackage{hyperref}	% Ce package doit TOUJOURS être en dernier!
+\usepackage{hyperref}	% Ce package doit TOUJOURS etre en dernier!
 
 %% Options des packages
 \frenchbsetup{og=«,fg=»}
@@ -1047,16 +1049,16 @@
 			urlcolor=bleuFoncePrimaire,%
 			linkcolor=bleuFoncePrimaire,%
 			pdfauthor=Votre Nom,%
-			pdftitle=Titre de la présentation}
+			pdftitle=Titre de la pr\'{e}sentation}
 
-%% Métadonnées du document
+%% M\'{e}tadonn\'{e}es du document
 
 \title{}
 \subtitle{}
 \HECauteur{}{}
 \date[]{}
-\subject{} % Sujet inséré dans les métadonnées du pdf
-\keywords{} % Mots-clés insérés dans les métadonnées du pdf
+\subject{} % Sujet ins\'{e}r\'{e} dans les m\'{e}tadonn\'{e}es du pdf
+\keywords{} % Mots-cl\'{e}s ins\'{e}r\'{e}s dans les m\'{e}tadonn\'{e}es du pdf
 
 \begin{document}
 	
